@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { UIProvider } from "@yamada-ui/react";
 import "./globals.css";
+import Providers from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +18,9 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={inter.className}>
-        <UIProvider>
+        <Providers>
           {children}
-        </UIProvider>
+        </Providers>
       </body>
     </html>
   );
