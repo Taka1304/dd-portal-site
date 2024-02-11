@@ -1,16 +1,17 @@
-import { UIProvider } from '@yamada-ui/react'
-import React from 'react'
+import { ColorModeScript, UIProvider } from "@yamada-ui/react";
+import React from "react";
 
 const Providers = ({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) => {
-  return (
-    <UIProvider>
-      {children}
-    </UIProvider>
-  )
-}
+	return (
+		<>
+			{/* <ColorModeScript type="cookie" nonce="testing" /> */}
+			<UIProvider>{children}</UIProvider>
+		</>
+	);
+};
 
-export default Providers
+export default Providers;
