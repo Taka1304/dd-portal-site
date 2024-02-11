@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@yamada-ui/fontawesome':
+    specifier: ^1.0.11
+    version: 1.0.11(@types/react@18.0.0)(react-dom@18.0.0)(react@18.0.0)
   '@yamada-ui/react':
     specifier: ^1.2.5
     version: 1.2.5(@emotion/react@11.11.3)(@emotion/styled@11.11.0)(@types/react@18.0.0)(framer-motion@11.0.3)(react-dom@18.0.0)(react@18.0.0)
@@ -315,6 +318,31 @@ packages:
 
   /@emotion/weak-memoize@0.3.1:
     resolution: {integrity: sha512-EsBwpc7hBUJWAsNPBmJy4hxWx12v6bshQsldrVmjxJoc3isbxhOrF2IcCpaXxfvq03NwkI7sbsOLXbYuqF/8Ww==}
+    dev: false
+
+  /@fortawesome/fontawesome-common-types@6.5.1:
+    resolution: {integrity: sha512-GkWzv+L6d2bI5f/Vk6ikJ9xtl7dfXtoRu3YGE6nq0p/FFqA1ebMOAWg3XgRyb0I6LYyYkiAo+3/KrwuBp8xG7A==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dev: false
+
+  /@fortawesome/fontawesome-svg-core@6.5.1:
+    resolution: {integrity: sha512-MfRCYlQPXoLlpem+egxjfkEuP9UQswTrlCOsknus/NcMoblTH2g0jPrapbcIb04KGA7E2GZxbAccGZfWoYgsrQ==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 6.5.1
+    dev: false
+
+  /@fortawesome/react-fontawesome@0.2.0(@fortawesome/fontawesome-svg-core@6.5.1)(react@18.0.0):
+    resolution: {integrity: sha512-uHg75Rb/XORTtVt7OS9WoK8uM276Ufi7gCzshVWkUJbHhh3svsUUeqXerrM96Wm7fRiDzfKRwSoahhMIkGAYHw==}
+    peerDependencies:
+      '@fortawesome/fontawesome-svg-core': ~1 || ~6
+      react: '>=16.3'
+    dependencies:
+      '@fortawesome/fontawesome-svg-core': 6.5.1
+      prop-types: 15.8.1
+      react: 18.0.0
     dev: false
 
   /@isaacs/cliui@8.0.2:
@@ -766,6 +794,22 @@ packages:
       react-focus-lock: 2.9.8(@types/react@18.0.0)(react@18.0.0)
     transitivePeerDependencies:
       - '@types/react'
+    dev: false
+
+  /@yamada-ui/fontawesome@1.0.11(@types/react@18.0.0)(react-dom@18.0.0)(react@18.0.0):
+    resolution: {integrity: sha512-+zvsjz65If84raQfBFl6NkySg6Fi4LZMt3b/u4/cn3GLQC4SbsRTJfu8DTtJ7WUmmCiKfUR6oKIq4bknW0V28Q==}
+    peerDependencies:
+      react: '>=18'
+    dependencies:
+      '@fortawesome/fontawesome-svg-core': 6.5.1
+      '@fortawesome/react-fontawesome': 0.2.0(@fortawesome/fontawesome-svg-core@6.5.1)(react@18.0.0)
+      '@yamada-ui/core': 1.3.2(@types/react@18.0.0)(react-dom@18.0.0)(react@18.0.0)
+      '@yamada-ui/icon': 1.0.11(@types/react@18.0.0)(react-dom@18.0.0)(react@18.0.0)
+      '@yamada-ui/utils': 1.0.5(react@18.0.0)
+      react: 18.0.0
+    transitivePeerDependencies:
+      - '@types/react'
+      - react-dom
     dev: false
 
   /@yamada-ui/form-control@1.0.14(@types/react@18.0.0)(react-dom@18.0.0)(react@18.0.0):
