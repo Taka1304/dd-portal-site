@@ -31,8 +31,8 @@ const Navigation = () => {
 		<>
 			<Flex gapX={6} mr={6}>
 				{List.map((item) => (
-					<Motion initial="initial" whileHover="animate">
-						<Link href={item.href} key={item.title}>
+					<Motion initial="initial" whileHover="animate" key={item.title}>
+						<Link href={item.href}>
 							<Text fontSize={"xl"} color={"white"}>
 								{item.title}
 							</Text>
