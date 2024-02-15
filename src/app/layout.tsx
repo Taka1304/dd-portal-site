@@ -1,3 +1,4 @@
+import { Flex } from "@yamada-ui/react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Footer from "~/components/layout/Footer";
@@ -21,13 +22,25 @@ export default function RootLayout({
 		<html lang="ja">
 			<body className={inter.className}>
 				<Providers>
-					<div className="flex flex-col min-h-screen w-screen justify-between">
+					<Flex
+						direction={"column"}
+						justify={"center"}
+						minHeight={"full"}
+						w={"full"}
+					>
 						<Header />
-						<main className="grow flex flex-col items-center justify-between">
+						<Flex
+							as="main"
+							direction="column"
+							align="center"
+							justify={"space-between"}
+							grow={1}
+							mt={14}
+						>
 							{children}
-						</main>
+						</Flex>
 						<Footer />
-					</div>
+					</Flex>
 				</Providers>
 			</body>
 		</html>
