@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: "Data Dreamers",
-	description: "Data Dreamers",
+	description: "Data Dreamers ",
 };
 
 export default function RootLayout({
@@ -25,7 +25,7 @@ export default function RootLayout({
 					<Flex
 						direction={"column"}
 						justify={"center"}
-						minHeight={"full"}
+						minHeight={"100vh"}
 						w={"full"}
 					>
 						<Header />
@@ -35,7 +35,7 @@ export default function RootLayout({
 							align="center"
 							justify={"space-between"}
 							grow={1}
-							mt={14}
+							gap={4}
 						>
 							{children}
 						</Flex>

@@ -11,18 +11,19 @@ const Header = () => {
 			justify={"space-between"}
 			alignItems={"center"}
 			p={4}
-			position={"fixed"}
+			position={"sticky"}
 			w={"full"}
-			h={"14"}
+			h={"20"}
+			bgGradient={"blue"}
 		>
-			<Flex direction="row" as={Link} href={"/"} alignItems={"center"}>
+			<Flex as={Link} direction="row" href={"/"} alignItems={"center"}>
 				<Image
 					src="/images/icon-removebg.png"
 					alt="Data Dreamers"
 					width={50}
 					height={50}
 				/>
-				<Heading as={"h1"} fontWeight={"bold"}>
+				<Heading as={"h1"} fontWeight={"bold"} color={"white"}>
 					Data Dreamers
 				</Heading>
 			</Flex>
