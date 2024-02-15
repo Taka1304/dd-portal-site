@@ -1,4 +1,4 @@
-import { Flex, Text } from "@yamada-ui/react";
+import { Flex, Motion, Text } from "@yamada-ui/react";
 import Link from "next/link";
 import React from "react";
 
@@ -22,19 +22,27 @@ const List = [
 ];
 
 const Navigation = () => {
+	const underlineAnimation = {
+		initial: { width: "0%" },
+		animate: { width: "100%" },
+	};
+
 	return (
 		<>
-			<Flex gapX={4} mr={4}>
+			<Flex gapX={6} mr={6}>
 				{List.map((item) => (
-					<Link href={item.href} key={item.title}>
-						<Text
-							_hover={{
-								color: "primary",
-							}}
-						>
-							{item.title}
-						</Text>
-					</Link>
+					<Motion initial="initial" whileHover="animate">
+						<Link href={item.href} key={item.title}>
+							<Text fontSize={"xl"} color={"white"}>
+								{item.title}
+							</Text>
+							<Motion
+								background="white"
+								h="1px"
+								variants={underlineAnimation}
+							/>
+						</Link>
+					</Motion>
 				))}
 			</Flex>
 		</>
