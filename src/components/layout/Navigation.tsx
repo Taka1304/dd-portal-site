@@ -1,6 +1,7 @@
 import { Flex, Motion, Text } from "@yamada-ui/react";
 import Link from "next/link";
 import React from "react";
+import SideMenu from "./SideMenu";
 
 const List = [
 	{
@@ -8,12 +9,12 @@ const List = [
 		href: "/",
 	},
 	{
-		title: "News",
-		href: "/news",
-	},
-	{
 		title: "About",
 		href: "/about",
+	},
+	{
+		title: "News",
+		href: "/news",
 	},
 	{
 		title: "Contact",
@@ -29,21 +30,24 @@ const Navigation = () => {
 
 	return (
 		<>
-			<Flex gapX={6} mr={6}>
+			<Flex gapX={6} mr={6} display={{ base: "flex", md: "none" }}>
 				{List.map((item) => (
 					<Motion initial="initial" whileHover="animate" key={item.title}>
 						<Link href={item.href}>
-							<Text fontSize={"xl"} color={"white"}>
+							<Text
+								fontSize={"lg"}
+								color={"white"}
+								_hover={{ bgGradient: "red", bgClip: "text" }}
+							>
 								{item.title}
 							</Text>
-							<Motion
-								background="white"
-								h="1px"
-								variants={underlineAnimation}
-							/>
+							<Motion bgGradient="red" h="1px" variants={underlineAnimation} />
 						</Link>
 					</Motion>
 				))}
+			</Flex>
+			<Flex display={{ base: "none", md: "flex" }}>
+				<SideMenu />
 			</Flex>
 		</>
 	);

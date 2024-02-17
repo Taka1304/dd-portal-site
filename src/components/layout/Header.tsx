@@ -13,7 +13,7 @@ const Header = () => {
 			p={4}
 			position={"sticky"}
 			w={"full"}
-			h={"20"}
+			h={"16"}
 			bgGradient={"blue"}
 		>
 			<Flex as={Link} direction="row" href={"/"} alignItems={"center"}>
@@ -23,7 +23,7 @@ const Header = () => {
 					width={50}
 					height={50}
 				/>
-				<Heading as={"h1"} fontWeight={"bold"} color={"white"}>
+				<Heading as={"h1"} fontWeight={"bold"} color={"white"} fontSize={"2xl"}>
 					Data Dreamers
 				</Heading>
 			</Flex>
