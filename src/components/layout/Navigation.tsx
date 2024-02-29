@@ -5,10 +5,6 @@ import SideMenu from "./SideMenu";
 
 const List = [
 	{
-		title: "Home",
-		href: "/",
-	},
-	{
 		title: "About",
 		href: "/about",
 	},
@@ -22,7 +18,11 @@ const List = [
 	},
 ];
 
-const Navigation = () => {
+type Props = {
+	direction?: "row" | "column";
+};
+
+const Navigation = ({ direction }: Props) => {
 	const underlineAnimation = {
 		initial: { width: "0%" },
 		animate: { width: "100%" },
@@ -30,18 +30,27 @@ const Navigation = () => {
 
 	return (
 		<>
-			<Flex gapX={6} mr={6} display={{ base: "flex", md: "none" }}>
+			<Flex
+				gapX={6}
+				mr={6}
+				display={{ base: "flex", md: "none" }}
+				direction={direction}
+			>
 				{List.map((item) => (
 					<Motion initial="initial" whileHover="animate" key={item.title}>
 						<Link href={item.href}>
 							<Text
 								fontSize={"lg"}
 								color={"white"}
-								_hover={{ bgGradient: "red", bgClip: "text" }}
+								_hover={{ bgGradient: "white", bgClip: "text" }}
 							>
 								{item.title}
 							</Text>
-							<Motion bgGradient="red" h="1px" variants={underlineAnimation} />
+							<Motion
+								bgGradient="white"
+								h="1px"
+								variants={underlineAnimation}
+							/>
 						</Link>
 					</Motion>
 				))}

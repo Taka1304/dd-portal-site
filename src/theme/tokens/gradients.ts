@@ -2,5 +2,5 @@ import { ThemeTokens } from "@yamada-ui/react";
 
 export const gradients: ThemeTokens = {
 	blue: "linear(to-br, #0E416B, #000029)",
-	red: "linear(to-br, #6CD7E0, #EE8383)",
+	white: "linear(to-r, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);",
 };
