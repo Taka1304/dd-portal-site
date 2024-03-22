@@ -1,7 +1,6 @@
 "use client";
 
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { Icon as FontAwesomeIcon } from "@yamada-ui/fontawesome";
+import { IconMenu2 } from "@tabler/icons-react";
 import {
 	Button,
 	Drawer,
@@ -50,31 +49,31 @@ const SideMenu = () => {
 				color={"white"}
 				_hover={{ bg: "rgba(256, 256, 256, 0.1)" }}
 			>
-				<FontAwesomeIcon icon={faBars} />
+				<IconMenu2 size={24} />
 			</Button>
 
 			<Drawer
 				isOpen={isOpen}
 				onClose={onClose}
-				size={"md"}
+				size={"sm"}
 				bgGradient={"blue"}
 				color="white"
 			>
 				<DrawerHeader>Data Dreamers</DrawerHeader>
 				<DrawerBody>
-					<Flex direction="column" gap={6} mt={6} w={"md"}>
+					<Flex direction="column" gap={6} mt={6} w={"sm"}>
 						{List.map((item) => (
 							<Motion initial="initial" whileHover="animate" key={item.title}>
 								<Link href={item.href} onClick={onClose}>
 									<Text
 										fontSize={"lg"}
 										color={"white"}
-										_hover={{ bgGradient: "red", bgClip: "text" }}
+										_hover={{ bgGradient: "white", bgClip: "text" }}
 									>
 										{item.title}
 									</Text>
 									<Motion
-										bgGradient="red"
+										bgGradient="white"
 										h="1px"
 										variants={underlineAnimation}
 									/>
@@ -83,12 +82,6 @@ const SideMenu = () => {
 						))}
 					</Flex>
 				</DrawerBody>
-
-				<DrawerFooter>
-					<Button variant="ghost" onClick={onClose} color={"white"}>
-						とじる
-					</Button>
-				</DrawerFooter>
 			</Drawer>
 		</>
 	);
