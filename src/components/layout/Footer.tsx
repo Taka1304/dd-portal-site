@@ -85,7 +85,7 @@ const Footer = () => {
 
 	return (
 		<Flex justify={"center"} w={"full"} bgGradient={"blue"}>
-			<Container maxW={"4xl"} p={4} as={"footer"} gap={{ base: "lg", md: "0" }}>
+			<Container maxW={"6xl"} p={4} as={"footer"} gap={{ base: "lg", md: "0" }}>
 				<Flex
 					direction={{ base: "row", md: "column" }}
 					justify={"space-between"}
