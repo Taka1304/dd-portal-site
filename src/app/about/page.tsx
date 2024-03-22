@@ -8,7 +8,7 @@ export default function Home() {
 				<Heading as={"h2"} size={"md"}>
 					Data Dreamers とは？
 				</Heading>
-				<Text></Text>
+				<Text>aaa</Text>
 			</Container>
 		</Flex>
 	);

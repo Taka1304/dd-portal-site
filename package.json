@@ -10,7 +10,8 @@
     "fix": "biome format --write ./ && biome lint --apply ./"
   },
   "dependencies": {
-    "@yamada-ui/fontawesome": "^1.0.11",
+    "@tabler/icons-react": "^3.1.0",
+    "@yamada-ui/carousel": "^1.0.15",
     "@yamada-ui/react": "^1.2.5",
     "next": "14.1.0",
     "react": "^18",
@@ -18,7 +19,6 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
-    "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
