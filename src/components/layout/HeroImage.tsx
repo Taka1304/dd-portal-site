@@ -8,12 +8,12 @@ interface Props extends ImageProps {
 
 const HeroImage: FC<Props> = ({ children, ...rest }) => {
 	return (
-		<Box h={"63vw"} maxH={"calc(100vh - 100px)"} w={"100vw"} pos={"relative"}>
-			<Image {...rest} fill sizes="100vw" style={{ objectFit: "cover" }} />
+		<Box h={"64vw"} maxH={"calc(100vh - 300px)"} w={"100vw"} pos={"relative"}>
+			<Image {...rest} fill sizes="100vw" style={{ objectFit: "contain" }} />
 			<Box
 				position={"absolute"}
 				bg={
-					"linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .25) 40%)"
+					"linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .10) 40%)"
 				}
 				w="full"
 				h="full"
