@@ -44,6 +44,17 @@ const data = [
 	},
 ];
 
+const sns = [
+	{
+		Icon: <IconBrandX />,
+		href: "https://twitter.com/projectdd2023",
+	},
+	{
+		Icon: <IconBrandYoutube />,
+		href: "https://www.youtube.com/@DataDreamers-rs6fy",
+	},
+];
+
 const Footer = () => {
 	const groups = data.map((item) => {
 		const links = item.links?.map((link) => (
@@ -112,27 +123,22 @@ const Footer = () => {
 						&copy; 2024 Data Dreamers. All Rights Reserved.
 					</Text>
 					<Flex>
-						<Button
-							bgColor={"transparent"}
-							color={"gray.200"}
-							_hover={{ color: "gray.50" }}
-						>
-							<IconBrandX />
-						</Button>
-						<Button
-							bgColor={"transparent"}
-							color={"gray.200"}
-							_hover={{ color: "gray.50" }}
-						>
-							<IconBrandYoutube />
-						</Button>
-						<Button
-							bgColor={"transparent"}
-							color={"gray.200"}
-							_hover={{ color: "gray.50" }}
-						>
-							<IconBrandGithub />
-						</Button>
+						{sns.map((item) => (
+							<a
+								key={item.href}
+								href={item.href}
+								target="_blank"
+								rel="noreferrer"
+							>
+								<Button
+									bgColor={"transparent"}
+									color={"gray.200"}
+									_hover={{ color: "gray.50" }}
+								>
+									{item.Icon}
+								</Button>
+							</a>
+						))}
 					</Flex>
 				</Flex>
 			</Container>
