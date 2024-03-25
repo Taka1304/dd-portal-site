@@ -91,7 +91,7 @@ const Footer = () => {
 					<Flex as={Link} direction="row" href={"/"} alignItems={"center"}>
 						<Image
 							src="/images/icon-removebg.png"
-							alt="Data Dreamers"
+							alt=""
 							width={50}
 							height={50}
 						/>
