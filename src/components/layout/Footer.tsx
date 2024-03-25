@@ -41,20 +41,6 @@ const data = [
 	{
 		title: "Contact",
 		href: "/contact",
-		links: [
-			{
-				label: "Contact Us",
-				href: "/contact#contact-us",
-			},
-			{
-				label: "Support",
-				href: "/contact#support",
-			},
-			{
-				label: "FAQ",
-				href: "/contact#faq",
-			},
-		],
 	},
 ];
 
@@ -125,7 +111,6 @@ const Footer = () => {
 					<Text variant={""} fontSize="sm" color={"gray.200"}>
 						&copy; 2024 Data Dreamers. All Rights Reserved.
 					</Text>
-
 					<Flex>
 						<Button
 							bgColor={"transparent"}
