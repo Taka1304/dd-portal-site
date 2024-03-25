@@ -42,12 +42,12 @@ const Navigation = ({ direction }: Props) => {
 							<Text
 								fontSize={"lg"}
 								color={"white"}
-								_hover={{ bgGradient: "white", bgClip: "text" }}
+								_hover={{ bgGradient: "whiteHover", bgClip: "text" }}
 							>
 								{item.title}
 							</Text>
 							<Motion
-								bgGradient="white"
+								bgGradient="whiteHover"
 								h="1px"
 								variants={underlineAnimation}
 							/>
