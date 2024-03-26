@@ -4,12 +4,9 @@ import {
 	Container,
 	Flex,
 	Grid,
-	GridItem,
 	Heading,
 	Motion,
-	Spacer,
 	Text,
-	VStack,
 } from "@yamada-ui/react";
 import Link from "next/link";
 import HeroImage from "~/components/layout/HeroImage";
