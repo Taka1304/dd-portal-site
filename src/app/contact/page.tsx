@@ -11,6 +11,7 @@ import {
 	Text,
 	VStack,
 } from "@yamada-ui/react";
+import Link from "next/link";
 import HeroImage from "~/components/layout/HeroImage";
 
 const heroImageData = {
@@ -23,7 +24,7 @@ const Subjects = [
 	"学部",
 	"全学部全学科",
 	"学年",
-	"学部1年生～4年生",
+	"学部1年生～4年生、修士1年生~2年生、博士課程",
 	"応募資格",
 	"特になし",
 ];
@@ -44,7 +45,9 @@ export default function Home() {
 					共に頑張る仲間を募集しています。
 				</Heading>
 				<Container bgColor={"gray.50"}>
-					<Heading>募集対象</Heading>
+					<Heading as={"h2"} size={"lg"}>
+						募集対象
+					</Heading>
 					<Grid templateColumns={"1fr 2fr"} gap={4}>
 						{Subjects.map((subject) => (
 							<Text key={subject}>{subject}</Text>
@@ -52,15 +55,21 @@ export default function Home() {
 					</Grid>
 				</Container>
 				<Motion whileHover={"animate"} variants={buttonAnimation}>
-					<Button
-						size={"lg"}
-						bgGradient={"white"}
-						_hover={{ bgGradient: "whiteHover", transition: "ease" }}
-						w="full"
-						rightIcon={<IconArrowNarrowRight />}
+					<a
+						href="https://docs.google.com/forms/d/e/1FAIpQLSflxF76gRaBrgvqoWCrMN30Anx91Qsm8ISPDVREWwgaMcz8xQ/viewform"
+						target="_blank"
+						rel="noreferrer"
 					>
-						詳細はこちら
-					</Button>
+						<Button
+							size={"lg"}
+							bgGradient={"white"}
+							_hover={{ bgGradient: "whiteHover", transition: "ease" }}
+							w="full"
+							rightIcon={<IconArrowNarrowRight />}
+						>
+							申し込みはこちら
+						</Button>
+					</a>
 				</Motion>
 			</Container>
 		</Flex>
