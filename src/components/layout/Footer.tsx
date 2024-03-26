@@ -1,8 +1,4 @@
-import {
-	IconBrandGithub,
-	IconBrandX,
-	IconBrandYoutube,
-} from "@tabler/icons-react";
+import { IconBrandX, IconBrandYoutube } from "@tabler/icons-react";
 import {
 	Button,
 	Container,

@@ -4,12 +4,9 @@ import {
 	Container,
 	Flex,
 	Grid,
-	GridItem,
 	Heading,
 	Motion,
-	Spacer,
 	Text,
-	VStack,
 } from "@yamada-ui/react";
 import HeroImage from "~/components/layout/HeroImage";
 
@@ -23,7 +20,7 @@ const Subjects = [
 	"学部",
 	"全学部全学科",
 	"学年",
-	"学部1年生～4年生",
+	"学部1年生～4年生、修士1年生~2年生、博士課程",
 	"応募資格",
 	"特になし",
 ];
