@@ -49,7 +49,7 @@ export default function Home() {
 
 			{/* 活動内容 */}
 			<Section>
-				<Heading as={"h2"} size={"lg"} id="data-dreamers">
+				<Heading as={"h2"} size={"lg"} id="activities">
 					活動内容
 				</Heading>
 				<Flex direction={"column"} gap="md" py="md">
@@ -105,10 +105,10 @@ export default function Home() {
 				</Flex>
 			</Section>
 
-			{/* 活動について */}
+			{/* 日々の活動 */}
 			<Section parent={{ bgColor: "gray.50" }}>
-				<Heading as={"h2"} size={"lg"} id="data-dreamers">
-					活動について
+				<Heading as={"h2"} size={"lg"} id="daily-activity">
+					日々の活動
 				</Heading>
 				<Grid templateColumns={"1fr"}>
 					<Heading as={"h3"} size={"sm"}>
