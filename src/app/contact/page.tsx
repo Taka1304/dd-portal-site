@@ -8,7 +8,6 @@ import {
 	Motion,
 	Text,
 } from "@yamada-ui/react";
-import Link from "next/link";
 import HeroImage from "~/components/layout/HeroImage";
 
 const heroImageData = {
