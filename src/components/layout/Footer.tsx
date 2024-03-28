@@ -1,4 +1,4 @@
-import { IconBrandX, IconBrandYoutube } from "@tabler/icons-react";
+import { IconBrandX, IconBrandYoutube, IconMail } from "@tabler/icons-react";
 import {
 	Button,
 	Container,
@@ -48,6 +48,10 @@ const sns = [
 	{
 		Icon: <IconBrandYoutube />,
 		href: "https://www.youtube.com/@DataDreamers-rs6fy",
+	},
+	{
+		Icon: <IconMail />,
+		href: "mailto:yumekobo.ddp@gmail.com",
 	},
 ];
 
