@@ -18,7 +18,7 @@ export default function Home() {
 				<Heading as={"h2"} size={"lg"} id="data-dreamers">
 					Data Dreamers とは？
 				</Heading>
-				<Text fontSize={"sm"} lineHeight={8}>
+				<Text lineHeight={8}>
 					金沢工業大学の課外活動 夢考房に所属しています。
 					<br />
 					2023年5月 に発足した 新しいプロジェクトです。
@@ -38,7 +38,7 @@ export default function Home() {
 				<Heading as={"h2"} size={"lg"} id="our-mission">
 					私たちの使命
 				</Heading>
-				<Text fontSize={"sm"}>
+				<Text>
 					「社会課題を解決できるデータサイエンティストの育成」という目的を達成するために、2つのテーマを軸に活動を行っています。
 				</Text>
 				<ol>
