@@ -18,7 +18,7 @@ export default function Home() {
 				<Heading as={"h2"} size={"lg"} id="data-dreamers">
 					Data Dreamers とは？
 				</Heading>
-				<Text fontSize={"sm"} lineHeight={8}>
+				<Text lineHeight={8}>
 					金沢工業大学の課外活動 夢考房に所属しています。
 					<br />
 					2023年5月 に発足した 新しいプロジェクトです。
@@ -38,7 +38,7 @@ export default function Home() {
 				<Heading as={"h2"} size={"lg"} id="our-mission">
 					私たちの使命
 				</Heading>
-				<Text fontSize={"sm"}>
+				<Text>
 					「社会課題を解決できるデータサイエンティストの育成」という目的を達成するために、2つのテーマを軸に活動を行っています。
 				</Text>
 				<ol>
@@ -49,7 +49,7 @@ export default function Home() {
 
 			{/* 活動内容 */}
 			<Section>
-				<Heading as={"h2"} size={"lg"} id="data-dreamers">
+				<Heading as={"h2"} size={"lg"} id="activities">
 					活動内容
 				</Heading>
 				<Flex direction={"column"} gap="md" py="md">
@@ -67,8 +67,8 @@ export default function Home() {
 					<Text pl="1em">
 						グループに分かれて Signate・Kaggle
 						などのコンペティションへ参加しています。
-						<br />
-						詳細はグループでの活動内容をご覧ください。
+						{/* <br />
+						詳細はグループでの活動内容をご覧ください。 */}
 					</Text>
 				</Flex>
 				<Flex direction={"column"} gap="md" py="md">
@@ -105,10 +105,10 @@ export default function Home() {
 				</Flex>
 			</Section>
 
-			{/* 活動について */}
+			{/* 日々の活動 */}
 			<Section parent={{ bgColor: "gray.50" }}>
-				<Heading as={"h2"} size={"lg"} id="data-dreamers">
-					活動について
+				<Heading as={"h2"} size={"lg"} id="daily-activity">
+					日々の活動
 				</Heading>
 				<Grid templateColumns={"1fr"}>
 					<Heading as={"h3"} size={"sm"}>
