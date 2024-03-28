@@ -25,8 +25,8 @@ const data = [
 				href: "/about#our-mission",
 			},
 			{
-				label: "Our Team",
-				href: "/about#our-team",
+				label: "Activities",
+				href: "/about#activities",
 			},
 		],
 	},
