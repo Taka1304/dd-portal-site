@@ -67,8 +67,8 @@ export default function Home() {
 					<Text pl="1em">
 						グループに分かれて Signate・Kaggle
 						などのコンペティションへ参加しています。
-						<br />
-						詳細はグループでの活動内容をご覧ください。
+						{/* <br />
+						詳細はグループでの活動内容をご覧ください。 */}
 					</Text>
 				</Flex>
 				<Flex direction={"column"} gap="md" py="md">
