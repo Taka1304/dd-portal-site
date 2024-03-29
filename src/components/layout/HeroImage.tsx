@@ -16,10 +16,10 @@ const HeroImage: FC<Props> = ({ children, ...rest }) => {
 				bgColor={"rgba(14,65,107, .8)"}
 				bottom="10%"
 				color="white"
-				p="2"
-				px="4"
+				py={{ base: "4", md: "2" }}
+				px={{ base: "6", md: "4" }}
 				fontWeight={"bold"}
-				fontSize={"lg"}
+				fontSize={{ base: "xl", md: "lg" }}
 			>
 				{children}
 			</Box>
