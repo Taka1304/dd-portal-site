@@ -1,5 +1,9 @@
-import { Container, Flex, Heading } from "@yamada-ui/react";
+import { IconChevronRight } from "@tabler/icons-react";
+import { Divider, Flex, Heading, Text } from "@yamada-ui/react";
+import Link from "next/link";
+import { OutlineButton } from "~/components/atoms/Button";
 import HeroImage from "~/components/layout/HeroImage";
+import Section from "~/components/layout/Section";
 
 const imageData = {
 	src: "/images/challenge-lab-01.avif",
@@ -15,11 +19,63 @@ export default function Home() {
 				<br />
 				&emsp;データサイエンスで。
 			</HeroImage>
-			<Container maxW={"4xl"}>
-				<Heading as={"h2"} size={"md"}>
-					Data Dreamers
+			<Section>
+				<Flex direction={"column"} align={"center"} gap={"2rem"}>
+					<div>
+						<Heading size={"2xl"} textAlign={"center"}>
+							Data Dreamers
+						</Heading>
+						{/* &amp; は & の実体参照 */}
+						<Text textAlign={"center"} color={"gray.700"}>
+							Data Science &amp; Analytics Community
+						</Text>
+					</div>
+					<Divider py={2} />
+					<Text textAlign={"center"}>
+						Data Dreamersは、データサイエンティストを育成するプロジェクトです。
+					</Text>
+					<Text textAlign={"center"}>
+						データ分析に興味のある人同士が交流し、切磋琢磨する場を提供します。
+					</Text>
+				</Flex>
+			</Section>
+			<Section parent={{ bgColor: "gray.50" }}>
+				<Heading size={"lg"}>活動内容</Heading>
+				<Text>
+					データサイエンスに関する勉強会やハンズオンイベントを開催し、データ分析技術の向上を図ります。
+				</Text>
+				<Text>
+					また、実際のデータを用いたコンペティションに参加し、社会課題の解決に挑戦します。
+				</Text>
+			</Section>
+
+			{/* <Section>
+				<Heading>
+					新入生の方へ
 				</Heading>
-			</Container>
+
+			</Section>
+
+			<Section parent={{ bgColor: "gray.50" }}>
+				<Heading>
+					お知らせ
+				</Heading>
+			</Section> */}
+
+			<Section>
+				<Heading>参加するには</Heading>
+				<Text>
+					Data
+					Dreamersでは、データサイエンスに興味のある方を広く募集しています。
+				</Text>
+				<Flex justify={"center"}>
+					<Link href={"/contact"}>
+						<OutlineButton rightIcon={<IconChevronRight />}>
+							詳しくはこちら
+						</OutlineButton>
+					</Link>
+				</Flex>
+			</Section>
 		</Flex>
 	);
 }
