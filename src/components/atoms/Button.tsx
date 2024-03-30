@@ -68,3 +68,30 @@ export const SolidButton: FC<ButtonProps> = ({ children, ...rest }) => {
 		</Button>
 	);
 };
+
+export const GhostButton: FC<ButtonProps> = ({ children, ...rest }) => {
+	const underlineAnimation = {
+		initial: { width: "0%" },
+		animate: { width: "100%" },
+	};
+
+	return (
+		<Motion
+			initial={"initial"}
+			as={"div"}
+			whileHover={"animate"}
+			fontWeight={"bold"}
+			fontSize={"xl"}
+		>
+			<Button
+				variant={"ghost"}
+				size={"lg"}
+				_hover={{}} // NOTE: デフォルトのhoverの設定を削除
+				{...rest}
+			>
+				{children}
+			</Button>
+			<Motion bgGradient="blue" h="2px" variants={underlineAnimation} />
+		</Motion>
+	);
+};
