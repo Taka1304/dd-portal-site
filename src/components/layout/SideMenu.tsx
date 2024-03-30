@@ -24,6 +24,10 @@ const List = [
 		href: "/about",
 	},
 	{
+		title: "New Students",
+		href: "/for-new-dreamers",
+	},
+	{
 		title: "News",
 		href: "/news",
 	},

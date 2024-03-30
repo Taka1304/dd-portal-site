@@ -1,7 +1,8 @@
 import { IconChevronRight } from "@tabler/icons-react";
 import { Divider, Flex, Heading, Text } from "@yamada-ui/react";
 import Link from "next/link";
-import { OutlineButton } from "~/components/atoms/Button";
+import { GhostButton } from "~/components/atoms/Button";
+import SpeakerDeck from "~/components/features/SpeakerDeck";
 import HeroImage from "~/components/layout/HeroImage";
 import Section from "~/components/layout/Section";
 
@@ -37,6 +38,7 @@ export default function Home() {
 					<Text textAlign={"center"}>
 						データ分析に興味のある人同士が交流し、切磋琢磨する場を提供します。
 					</Text>
+					<SpeakerDeck />
 				</Flex>
 			</Section>
 			<Section parent={{ bgColor: "gray.50" }}>
@@ -54,11 +56,11 @@ export default function Home() {
 				<Text>
 					新入生に向けたイベントを開催しています。データサイエンスに興味のある方はぜひご参加ください。
 				</Text>
-				<Flex justify={"center"}>
-					<Link href={"/forNewDreamers"}>
-						<OutlineButton rightIcon={<IconChevronRight />}>
+				<Flex justify={"end"}>
+					<Link href={"/for-new-dreamers"}>
+						<GhostButton rightIcon={<IconChevronRight />}>
 							詳しくはこちら
-						</OutlineButton>
+						</GhostButton>
 					</Link>
 				</Flex>
 			</Section>
@@ -66,11 +68,11 @@ export default function Home() {
 			<Section parent={{ bgColor: "gray.50" }}>
 				<Heading>お知らせ</Heading>
 				<Text>最新の活動情報をお知らせします。</Text>
-				<Flex justify={"center"}>
+				<Flex justify={"end"}>
 					<Link href={"/news"}>
-						<OutlineButton rightIcon={<IconChevronRight />}>
+						<GhostButton rightIcon={<IconChevronRight />}>
 							詳しくはこちら
-						</OutlineButton>
+						</GhostButton>
 					</Link>
 				</Flex>
 			</Section>
@@ -81,11 +83,11 @@ export default function Home() {
 					Data
 					Dreamersでは、データサイエンスに興味のある方を広く募集しています。
 				</Text>
-				<Flex justify={"center"}>
+				<Flex justify={"end"}>
 					<Link href={"/contact"}>
-						<OutlineButton rightIcon={<IconChevronRight />}>
+						<GhostButton rightIcon={<IconChevronRight />}>
 							詳しくはこちら
-						</OutlineButton>
+						</GhostButton>
 					</Link>
 				</Flex>
 			</Section>
