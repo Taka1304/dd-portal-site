@@ -55,7 +55,7 @@ export default function Home() {
 				</Heading>
 			</Section>
 			<Section>
-				<Heading as="h2" size={"lg"}>
+				<Heading as="h2" size={"lg"} id="skills">
 					身につくスキル
 				</Heading>
 				<Text>
@@ -88,7 +88,7 @@ export default function Home() {
 				</Text>
 			</Section>
 			<Section parent={{ bgColor: "gray.50" }}>
-				<Heading as="h2" size={"lg"}>
+				<Heading as="h2" size={"lg"} id="schedule">
 					スケジュール
 				</Heading>
 

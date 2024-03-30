@@ -57,7 +57,7 @@ export default function Home() {
 					新入生に向けたイベントを開催しています。データサイエンスに興味のある方はぜひご参加ください。
 				</Text>
 				<Flex justify={"end"}>
-					<Link href={"/forNewDreamers"}>
+					<Link href={"/for-new-dreamers"}>
 						<GhostButton rightIcon={<IconChevronRight />}>
 							詳しくはこちら
 						</GhostButton>

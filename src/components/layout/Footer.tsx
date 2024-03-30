@@ -17,22 +17,32 @@ const data = [
 		href: "/about",
 		links: [
 			{
-				label: "Data Dreamers",
+				label: "data dreamers",
 				href: "/about#data-dreamers",
 			},
 			{
-				label: "Our Mission",
+				label: "our mission",
 				href: "/about#our-mission",
 			},
 			{
-				label: "Activities",
+				label: "activities",
 				href: "/about#activities",
 			},
 		],
 	},
 	{
-		title: "News",
-		href: "/news",
+		title: "New Students",
+		href: "/for-new-dreamers",
+		links: [
+			{
+				label: "skills",
+				href: "/for-new-dreamers#skills",
+			},
+			{
+				label: "schedule",
+				href: "/for-new-dreamers#schedule",
+			},
+		],
 	},
 	{
 		title: "Contact",
