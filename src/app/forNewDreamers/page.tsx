@@ -32,7 +32,7 @@ const events = [
 	"「夢考房合同説明会」",
 	"23号館2階211",
 	"4/11 17:00~19:00",
-	"「プロジェクト合同説明会」",
+	"「情報工学系プロジェクト説明会」",
 	"23号館1階 パフォーミングスタジオ",
 ];
 
@@ -61,13 +61,12 @@ export default function Home() {
 				<Text>
 					本活動を通して、基本的なデータサイエンティストに必要なスキルを身につけることができます。
 				</Text>
-				{/* TODO: 見辛いので改善する */}
-				<Flex pos={"relative"} w="full" height="300">
+				<Flex pos={"relative"} w="full" height="50vw" maxH="xl">
 					<Image
 						src="/images/skill.png"
 						alt="skill"
 						fill
-						sizes="(max-width: 600px) 100vw, 600px"
+						sizes="(max-width: 600px) 100vw, 48rem"
 						style={{ objectFit: "contain" }}
 					/>
 				</Flex>
