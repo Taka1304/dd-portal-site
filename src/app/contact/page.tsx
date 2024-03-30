@@ -1,14 +1,8 @@
-import { IconArrowNarrowRight } from "@tabler/icons-react";
-import {
-	Button,
-	Container,
-	Flex,
-	Grid,
-	Heading,
-	Motion,
-	Text,
-} from "@yamada-ui/react";
+import { IconArrowNarrowRight, IconMail } from "@tabler/icons-react";
+import { Button, Flex, Grid, Heading, Motion, Text } from "@yamada-ui/react";
+import Image from "next/image";
 import HeroImage from "~/components/layout/HeroImage";
+import Section from "~/components/layout/Section";
 
 const heroImageData = {
 	src: "/images/taking-notes-and-working-on-laptop.jpg",
@@ -30,26 +24,113 @@ const buttonAnimation = {
 	animate: { scale: 1.05 },
 };
 
+const flows = [
+	"4/15(月) ",
+	"「研修1回目」",
+	"4/22(月) ",
+	"「研修2回目」",
+	"5/13(月)",
+	"「研修3回目」",
+];
+
 export default function Home() {
 	return (
 		<Flex direction={"column"} align={"center"} justify={"space-between"}>
 			<HeroImage {...heroImageData}>Contact</HeroImage>
-			<Container maxW={"4xl"}>
-				<Heading as={"h2"} size={"md"}>
+			<Section>
+				<Heading as={"h2"} size={"lg"}>
 					Data Dreamers では、
 					<br />
 					共に頑張る仲間を募集しています。
 				</Heading>
-				<Container bgColor={"gray.50"}>
-					<Heading as={"h2"} size={"lg"}>
-						募集対象
-					</Heading>
-					<Grid templateColumns={"1fr 2fr"} gap={4}>
-						{Subjects.map((subject) => (
-							<Text key={subject}>{subject}</Text>
-						))}
-					</Grid>
-				</Container>
+			</Section>
+
+			<Section parent={{ bgColor: "gray.50" }}>
+				<Heading as={"h2"} size={"lg"} id="guidelines">
+					募集要項
+				</Heading>
+				<Grid templateColumns={"1fr 2fr"} gap={4}>
+					{Subjects.map((subject) => (
+						<Text key={subject}>{subject}</Text>
+					))}
+				</Grid>
+			</Section>
+
+			<Section>
+				<Heading as="h2" size={"lg"} id="schedule">
+					活動の流れ
+				</Heading>
+				<Grid templateColumns="1fr 2fr" gap={4}>
+					{flows.map((flow) => (
+						<Text key={flow}>{flow}</Text>
+					))}
+				</Grid>
+				<Text color="gray.700">
+					※活動場所については随時お知らせいたします。
+				</Text>
+				<Text color={"red.500"} fontWeight={"bold"}>
+					仮加入申請を行ったうえで、全3回の研修すべてに出席した方のみが本加入となります。
+					<br />
+					本加入後はグループの希望アンケートを取り、グループ配属となります。
+				</Text>
+			</Section>
+
+			<Section parent={{ bgColor: "gray.50" }}>
+				<Heading as={"h2"} size={"lg"} id="contact_us">
+					お問い合わせ
+				</Heading>
+				<Text>ご質問等がございましたら、お気軽にお問い合わせください。</Text>
+				<Flex justify={"center"} gapX={"6"}>
+					<Flex
+						_hover={{ bgGradient: "light" }}
+						direction={"column"}
+						align={"center"}
+						rounded={"md"}
+						border={"solid 1px"}
+						borderColor={"gray.500"}
+						p="2"
+						gap="2"
+						as="a"
+						href="https://peing.net/ja/b9dd01d45cfea7"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<Image
+							src="/images/peing.png"
+							alt="質問箱"
+							height={100}
+							width={100}
+						/>
+						<Text>質問箱</Text>
+					</Flex>
+
+					<Flex
+						_hover={{ bgGradient: "light" }}
+						direction={"column"}
+						align={"center"}
+						rounded={"md"}
+						border={"solid 1px"}
+						borderColor={"gray.500"}
+						p="2"
+						gap="2"
+						as="a"
+						href="mailto:yumekobo.ddp@gmail.com"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<IconMail
+							style={{
+								width: "100px",
+								height: "100px",
+								color: "var(--ui-colors-gray-800)",
+							}}
+						/>
+						<Text>G-Mail</Text>
+					</Flex>
+				</Flex>
+			</Section>
+
+			<Section>
 				<Motion whileHover={"animate"} variants={buttonAnimation}>
 					<a
 						href="https://docs.google.com/forms/d/e/1FAIpQLSflxF76gRaBrgvqoWCrMN30Anx91Qsm8ISPDVREWwgaMcz8xQ/viewform"
@@ -57,17 +138,18 @@ export default function Home() {
 						rel="noreferrer"
 					>
 						<Button
+							h="20"
 							size={"lg"}
-							bgGradient={"white"}
-							_hover={{ bgGradient: "whiteHover", transition: "ease" }}
+							bgColor={"gray.50"}
+							_hover={{ bgGradient: "light", transition: "ease" }}
 							w="full"
 							rightIcon={<IconArrowNarrowRight />}
 						>
-							申し込みはこちら
+							お申し込みはこちら
 						</Button>
 					</a>
 				</Motion>
-			</Container>
+			</Section>
 		</Flex>
 	);
 }
