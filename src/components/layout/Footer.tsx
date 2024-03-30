@@ -47,6 +47,20 @@ const data = [
 	{
 		title: "Contact",
 		href: "/contact",
+		links: [
+			{
+				label: "guidelines",
+				href: "/contact#guidelines",
+			},
+			{
+				label: "schedule",
+				href: "/contact#schedule",
+			},
+			{
+				label: "contact us",
+				href: "/contact#contact-us",
+			},
+		],
 	},
 ];
 

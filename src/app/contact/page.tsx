@@ -76,7 +76,7 @@ export default function Home() {
 			</Section>
 
 			<Section parent={{ bgColor: "gray.50" }}>
-				<Heading as={"h2"} size={"lg"} id="contact_us">
+				<Heading as={"h2"} size={"lg"} id="contact-us">
 					お問い合わせ
 				</Heading>
 				<Text>ご質問等がございましたら、お気軽にお問い合わせください。</Text>
