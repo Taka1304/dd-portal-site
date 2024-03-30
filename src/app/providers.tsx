@@ -1,4 +1,4 @@
-import { ColorModeScript, UIProvider } from "@yamada-ui/react";
+import { UIProvider } from "@yamada-ui/react";
 import React from "react";
 import { config, theme } from "~/theme";
 

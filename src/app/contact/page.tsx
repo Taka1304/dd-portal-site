@@ -11,7 +11,7 @@ import {
 import HeroImage from "~/components/layout/HeroImage";
 
 const heroImageData = {
-	src: "/images/challenge-lab-02.avif",
+	src: "/images/taking-notes-and-working-on-laptop.jpg",
 	alt: "Data Dreamers",
 	priority: true,
 };

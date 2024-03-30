@@ -49,18 +49,31 @@ export default function Home() {
 				</Text>
 			</Section>
 
-			{/* <Section>
-				<Heading>
-					新入生の方へ
-				</Heading>
-
+			<Section>
+				<Heading>新入生の方へ</Heading>
+				<Text>
+					新入生に向けたイベントを開催しています。データサイエンスに興味のある方はぜひご参加ください。
+				</Text>
+				<Flex justify={"center"}>
+					<Link href={"/forNewDreamers"}>
+						<OutlineButton rightIcon={<IconChevronRight />}>
+							詳しくはこちら
+						</OutlineButton>
+					</Link>
+				</Flex>
 			</Section>
 
 			<Section parent={{ bgColor: "gray.50" }}>
-				<Heading>
-					お知らせ
-				</Heading>
-			</Section> */}
+				<Heading>お知らせ</Heading>
+				<Text>最新の活動情報をお知らせします。</Text>
+				<Flex justify={"center"}>
+					<Link href={"/news"}>
+						<OutlineButton rightIcon={<IconChevronRight />}>
+							詳しくはこちら
+						</OutlineButton>
+					</Link>
+				</Flex>
+			</Section>
 
 			<Section>
 				<Heading>参加するには</Heading>
