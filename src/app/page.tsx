@@ -2,7 +2,7 @@ import { IconChevronRight } from "@tabler/icons-react";
 import { Divider, Flex, Heading, Text } from "@yamada-ui/react";
 import Link from "next/link";
 import { GhostButton } from "~/components/atoms/Button";
-import SpeakerDeck from "~/components/features/SpeakerDeck";
+import DocsWell from "~/components/features/DocsWell";
 import HeroImage from "~/components/layout/HeroImage";
 import Section from "~/components/layout/Section";
 
@@ -38,7 +38,7 @@ export default function Home() {
 					<Text textAlign={"center"}>
 						データ分析に興味のある人同士が交流し、切磋琢磨する場を提供します。
 					</Text>
-					<SpeakerDeck />
+					<DocsWell />
 				</Flex>
 			</Section>
 			<Section parent={{ bgColor: "gray.50" }}>

@@ -1,12 +1,12 @@
 import React from "react";
 
-const SpeakerDeck = () => {
+const DocsWell = () => {
 	return (
 		<iframe
-			className="speakerdeck-iframe"
-			src="https://speakerdeck.com/player/5834b5d5a3454f39a0134bbc0f1ce72f?slide=1"
 			title="Data Dreamers 紹介資料"
+			src="https://www.docswell.com/slide/ZJLJG1/embed?key=2024-03-29-130130"
 			allowFullScreen
+			className="docswell-iframe"
 			style={{
 				border: "0px",
 				background: "padding-box padding-box rgba(0, 0, 0, 0.1)",
@@ -18,9 +18,8 @@ const SpeakerDeck = () => {
 				height: "auto",
 				aspectRatio: "16 / 9",
 			}}
-			data-ratio="1.4177215189873418"
 		/>
 	);
 };
 
-export default SpeakerDeck;
+export default DocsWell;
