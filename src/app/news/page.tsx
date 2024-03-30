@@ -1,3 +1,11 @@
+import { Flex, Heading } from "@yamada-ui/react";
+
 export default function Home() {
-	return <div className="flex flex-col items-center justify-between">News</div>;
+	return (
+		<Flex direction={"column"} align={"center"} justify={"space-between"}>
+			<Heading textAlign={"center"} size={"md"}>
+				現在お知らせはありません
+			</Heading>
+		</Flex>
+	);
 }
