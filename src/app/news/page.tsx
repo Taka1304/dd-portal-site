@@ -18,7 +18,7 @@ export default function Home() {
 			</HeroImage>
 			<Section>
 				<Heading as={"h2"} size={"lg"}>
-					外部メディアからのピックアップ
+					メディア掲載情報
 				</Heading>
 			</Section>
 
