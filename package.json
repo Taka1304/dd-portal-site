@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "biome lint ./ && biome format ./",
-    "fix": "biome format --write ./ && biome lint --apply ./"
+    "lint": "biome check ./src",
+    "fix": "biome check --apply ./src"
   },
   "dependencies": {
     "@tabler/icons-react": "^3.1.0",
