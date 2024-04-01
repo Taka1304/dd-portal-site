@@ -6,11 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "biome lint ./ && biome format ./",
-    "fix": "biome format --write ./ && biome lint --apply ./"
+    "lint": "biome check ./src",
+    "fix": "biome check --apply ./src"
   },
   "dependencies": {
     "@tabler/icons-react": "^3.1.0",
+    "@vercel/analytics": "^1.2.2",
     "@yamada-ui/carousel": "^1.0.15",
     "@yamada-ui/react": "^1.2.5",
     "dayjs": "^1.11.10",
