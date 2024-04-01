@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tabler/icons-react": "^3.1.0",
+    "@vercel/analytics": "^1.2.2",
     "@yamada-ui/carousel": "^1.0.15",
     "@yamada-ui/react": "^1.2.5",
     "dayjs": "^1.11.10",

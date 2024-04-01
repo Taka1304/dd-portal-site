@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { UIProvider } from "@yamada-ui/react";
 import React from "react";
 import { config, theme } from "~/theme";
@@ -12,6 +13,7 @@ const Providers = ({
 			{/* <ColorModeScript type="cookie" nonce="testing" /> */}
 			<UIProvider theme={theme} config={config}>
 				{children}
+				<Analytics />
 			</UIProvider>
 		</>
 	);
