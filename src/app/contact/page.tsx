@@ -1,9 +1,8 @@
 import { IconMail } from "@tabler/icons-react";
-import { Flex, Grid, Heading, Text } from "@yamada-ui/react";
+import { Flex, Heading, Text } from "@yamada-ui/react";
 import Image from "next/image";
 import HeroImage from "~/components/layout/HeroImage";
 import Section from "~/components/layout/Section";
-import { FLOWS } from "~/constants/flows";
 
 const heroImageData = {
 	src: "/images/taking-notes-and-working-on-laptop.jpg",
@@ -11,14 +10,14 @@ const heroImageData = {
 	priority: true,
 };
 
-const Subjects = [
-	"学部",
-	"全学部全学科",
-	"学年",
-	"学部1年生～4年生、修士1年生~2年生、博士課程",
-	"応募資格",
-	"特になし",
-];
+// const Subjects = [
+// 	"学部",
+// 	"全学部全学科",
+// 	"学年",
+// 	"学部1年生～4年生、修士1年生~2年生、博士課程",
+// 	"応募資格",
+// 	"特になし",
+// ];
 
 // const buttonAnimation = {
 // 	initial: { scale: 1 },
@@ -29,7 +28,7 @@ export default function Home() {
 	return (
 		<Flex direction={"column"} align={"center"} justify={"space-between"}>
 			<HeroImage {...heroImageData}>Contact</HeroImage>
-			<Section>
+			{/* <Section>
 				<Heading as={"h2"} size={"lg"}>
 					Data Dreamers では、
 					<br />
@@ -57,9 +56,9 @@ export default function Home() {
 						<Text key={flow}>{flow}</Text>
 					))}
 				</Grid>
-				{/* <Text color="gray.700">
+				<Text color="gray.700">
 					※活動場所については随時お知らせいたします。
-				</Text> */}
+				</Text>
 				<Text color={"red.500"} fontWeight={"bold"}>
 					仮加入申請を行ったうえで、全3回の研修すべてに出席した方のみが本加入となります。
 					<br />
@@ -70,9 +69,9 @@ export default function Home() {
 					<br />
 					事前にその旨をお知らせください。
 				</Text>
-			</Section>
+			</Section> */}
 
-			<Section parent={{ bgColor: "gray.50" }}>
+			<Section>
 				<Heading as={"h2"} size={"lg"} id="contact-us">
 					お問い合わせ
 				</Heading>
