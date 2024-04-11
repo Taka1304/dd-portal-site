@@ -52,7 +52,7 @@ export default function Home() {
 				<Heading as="h2" size={"lg"} id="schedule">
 					活動の流れ
 				</Heading>
-				<Grid templateColumns="1fr 2fr 1fr" gap={4}>
+				<Grid templateColumns="2fr 2fr 1fr" gap={4}>
 					{FLOWS.map((flow) => (
 						<Text key={flow}>{flow}</Text>
 					))}
