@@ -1,5 +1,5 @@
-import { IconArrowNarrowRight, IconMail } from "@tabler/icons-react";
-import { Button, Flex, Grid, Heading, Motion, Text } from "@yamada-ui/react";
+import { IconMail } from "@tabler/icons-react";
+import { Flex, Heading, Text } from "@yamada-ui/react";
 import Image from "next/image";
 import HeroImage from "~/components/layout/HeroImage";
 import Section from "~/components/layout/Section";
@@ -10,34 +10,25 @@ const heroImageData = {
 	priority: true,
 };
 
-const Subjects = [
-	"学部",
-	"全学部全学科",
-	"学年",
-	"学部1年生～4年生、修士1年生~2年生、博士課程",
-	"応募資格",
-	"特になし",
-];
+// const Subjects = [
+// 	"学部",
+// 	"全学部全学科",
+// 	"学年",
+// 	"学部1年生～4年生、修士1年生~2年生、博士課程",
+// 	"応募資格",
+// 	"特になし",
+// ];
 
-const buttonAnimation = {
-	initial: { scale: 1 },
-	animate: { scale: 1.05 },
-};
-
-const flows = [
-	"4/15(月) ",
-	"「研修1回目」",
-	"4/22(月) ",
-	"「研修2回目」",
-	"5/13(月)",
-	"「研修3回目」",
-];
+// const buttonAnimation = {
+// 	initial: { scale: 1 },
+// 	animate: { scale: 1.05 },
+// };
 
 export default function Home() {
 	return (
 		<Flex direction={"column"} align={"center"} justify={"space-between"}>
 			<HeroImage {...heroImageData}>Contact</HeroImage>
-			<Section>
+			{/* <Section>
 				<Heading as={"h2"} size={"lg"}>
 					Data Dreamers では、
 					<br />
@@ -60,8 +51,8 @@ export default function Home() {
 				<Heading as="h2" size={"lg"} id="schedule">
 					活動の流れ
 				</Heading>
-				<Grid templateColumns="1fr 2fr" gap={4}>
-					{flows.map((flow) => (
+				<Grid templateColumns="2fr 2fr 1fr" gap={4}>
+					{FLOWS.map((flow) => (
 						<Text key={flow}>{flow}</Text>
 					))}
 				</Grid>
@@ -73,9 +64,14 @@ export default function Home() {
 					<br />
 					本加入後はグループの希望アンケートを取り、グループ配属となります。
 				</Text>
-			</Section>
+				<Text color="gray.700">
+					授業などが重なっている場合、個別に対応させていただきます。
+					<br />
+					事前にその旨をお知らせください。
+				</Text>
+			</Section> */}
 
-			<Section parent={{ bgColor: "gray.50" }}>
+			<Section>
 				<Heading as={"h2"} size={"lg"} id="contact-us">
 					お問い合わせ
 				</Heading>
@@ -130,7 +126,7 @@ export default function Home() {
 				</Flex>
 			</Section>
 
-			<Section>
+			{/* <Section>
 				<Motion whileHover={"animate"} variants={buttonAnimation}>
 					<a
 						href="https://docs.google.com/forms/d/e/1FAIpQLSflxF76gRaBrgvqoWCrMN30Anx91Qsm8ISPDVREWwgaMcz8xQ/viewform"
@@ -149,7 +145,7 @@ export default function Home() {
 						</Button>
 					</a>
 				</Motion>
-			</Section>
+			</Section> */}
 		</Flex>
 	);
 }

@@ -78,11 +78,8 @@ export default function Home() {
 			</Section>
 
 			<Section>
-				<Heading>参加するには</Heading>
-				<Text>
-					Data
-					Dreamersでは、データサイエンスに興味のある方を広く募集しています。
-				</Text>
+				<Heading>お問い合わせ</Heading>
+				<Text>Data Dreamersへのお問い合わせはこちらからお願いします。</Text>
 				<Flex justify={"end"}>
 					<Link href={"/contact"}>
 						<GhostButton rightIcon={<IconChevronRight />}>
