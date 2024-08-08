@@ -54,14 +54,17 @@ const sns = [
 	{
 		Icon: <IconBrandX />,
 		href: "https://twitter.com/projectdd2023",
+		label: "X, Twitter",
 	},
 	{
 		Icon: <IconBrandYoutube />,
 		href: "https://www.youtube.com/@DataDreamers-rs6fy",
+		label: "Youtube",
 	},
 	{
 		Icon: <IconMail />,
 		href: "mailto:yumekobo.ddp@gmail.com",
+		label: "EMail",
 	},
 ];
 
@@ -139,11 +142,13 @@ const Footer = () => {
 								href={item.href}
 								target="_blank"
 								rel="noreferrer"
+								aria-label={item.label}
 							>
 								<Button
 									bgColor={"transparent"}
 									color={"gray.200"}
 									_hover={{ color: "gray.50" }}
+									aria-label={item.label}
 								>
 									{item.Icon}
 								</Button>
