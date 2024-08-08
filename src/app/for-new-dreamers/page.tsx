@@ -22,21 +22,6 @@ const tools = [
 	"Docker",
 ];
 
-// const events = [
-// 	"4/3 10:00~17:00",
-// 	"「プロジェクト合同説明会」",
-// 	"23号館1階",
-// 	"4/8 17:10~18:50",
-// 	"「Data Dreamers Project説明会」",
-// 	"23号館2階214",
-// 	"4/10,11,12 17:15~19:00",
-// 	"「夢考房合同説明会」",
-// 	"23号館2階211",
-// 	"4/11 17:00~19:00",
-// 	"「情報工学系プロジェクト説明会」",
-// 	"23号館1階 パフォーミングスタジオ",
-// ];
-
 export default function Home() {
 	return (
 		<Flex direction={"column"} align={"center"} justify={"space-between"}>
@@ -83,15 +68,6 @@ export default function Home() {
 				<Heading as="h2" size={"lg"} id="schedule">
 					スケジュール
 				</Heading>
-
-				{/* <Heading as="h3" size={"md"}>
-					課外活動紹介イベント
-				</Heading>
-				<Grid templateColumns="1fr 2fr 1fr" gap={4}>
-					{events.map((event) => (
-						<Text key={event}>{event}</Text>
-					))}
-				</Grid> */}
 
 				<Heading as="h3" size={"md"}>
 					活動の流れ

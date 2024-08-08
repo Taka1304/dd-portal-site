@@ -1,11 +1,18 @@
 import { Box } from "@yamada-ui/react";
-import Image, { ImageProps } from "next/image";
-import React, { FC } from "react";
+import Image, { type ImageProps } from "next/image";
+import type React from "react";
+import type { FC } from "react";
 
 interface Props extends ImageProps {
 	children?: React.ReactNode;
 }
 
+/**
+ *
+ * @param children React.ReactNode
+ * @param rest ImageProps
+ * @description Hero Image component with gradient overlay and text
+ */
 const HeroImage: FC<Props> = ({ children, ...rest }) => {
 	return (
 		<Box h={"64vw"} maxH={"calc(100vh - 300px)"} w={"100vw"} pos={"relative"}>
