@@ -1,6 +1,7 @@
 import { Box } from "@yamada-ui/react";
-import Image, { ImageProps } from "next/image";
-import React, { FC } from "react";
+import Image, { type ImageProps } from "next/image";
+import type React from "react";
+import type { FC } from "react";
 
 interface Props extends ImageProps {
 	children?: React.ReactNode;

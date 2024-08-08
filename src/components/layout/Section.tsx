@@ -1,5 +1,6 @@
-import { Container, Flex, FlexProps } from "@yamada-ui/react";
-import React, { FC } from "react";
+import { Container, Flex, type FlexProps } from "@yamada-ui/react";
+import type React from "react";
+import type { FC } from "react";
 
 type Props = {
 	parent?: FlexProps;
