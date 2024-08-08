@@ -67,5 +67,6 @@
 		}
 	],
 	"gitmoji.showEmojiCode": true,
-	"gitmoji.onlyUseCustomEmoji": true
+	"gitmoji.onlyUseCustomEmoji": true,
+	"cSpell.words": ["eyecatch"]
 }
