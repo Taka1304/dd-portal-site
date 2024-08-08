@@ -55,8 +55,8 @@ const BlogListPage = async () => {
 									<Image
 										src={blog.eyecatch?.url ?? RandomDummyImage()}
 										alt={blog.title}
-										layout="fill"
-										objectFit="contain"
+										fill
+										style={{ objectFit: "contain" }}
 									/>
 								</Box>
 								<CardHeader minH={"16"} alignItems={"start"}>
