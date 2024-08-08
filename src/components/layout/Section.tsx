@@ -7,6 +7,12 @@ type Props = {
 	children: React.ReactNode;
 };
 
+/**
+ *
+ * @param parent FlexProps
+ * @param children React.ReactNode
+ * @description Max width of 4xl and padding of 4rem 2rem
+ */
 const Section: FC<Props> = ({ parent, children }) => {
 	return (
 		<Flex w={"full"} justify={"center"} {...parent}>
