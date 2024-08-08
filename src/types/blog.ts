@@ -1,19 +1,8 @@
-interface Base {
+import type { MicroCMSDate, MicroCMSImage } from "microcms-js-sdk";
+
+export interface Category extends MicroCMSDate {
 	id: string;
-	createdAt: string;
-	updatedAt: string;
-	publishedAt: string;
-	revisedAt: string;
-}
-
-export interface Category extends Base {
 	name: string;
-}
-
-export interface EyeCatch {
-	url: string;
-	width: number;
-	height: number;
 }
 
 export interface Blog {
@@ -23,9 +12,10 @@ export interface Blog {
 	limit: number;
 }
 
-export interface Content extends Base {
+export interface Content extends MicroCMSDate {
+	id: string;
 	title: string;
 	content: string;
-	eyecatch: EyeCatch;
-	category: Category;
+	eyecatch?: MicroCMSImage;
+	categories: Category[];
 }
