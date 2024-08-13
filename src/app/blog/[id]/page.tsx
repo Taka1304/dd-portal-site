@@ -20,6 +20,8 @@ interface Props {
 	};
 }
 
+export const revalidate = 300;
+
 const BlogContentPage = async ({ params }: Props) => {
 	const { id } = params;
 	const data = await client.get<Content>({ endpoint: "blogs", contentId: id });

@@ -15,6 +15,7 @@
 		"@yamada-ui/carousel": "^1.0.15",
 		"@yamada-ui/react": "^1.2.5",
 		"dayjs": "^1.11.10",
+		"highlight.js": "^11.10.0",
 		"html-react-parser": "^5.1.12",
 		"microcms-js-sdk": "^3.1.2",
 		"next": "14.1.1",
