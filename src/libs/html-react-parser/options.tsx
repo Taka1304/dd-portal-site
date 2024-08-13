@@ -1,14 +1,20 @@
 import {
+	Box,
 	DecimalList,
 	DiscList,
 	Heading,
 	ListItem,
 	NativeTable,
+	TableContainer,
+	Tbody,
 	Td,
 	Text,
 	Th,
 	Tr,
 } from "@yamada-ui/react";
+import hljs from "highlight.js";
+import "highlight.js/styles/atom-one-dark.css";
+import parse from "html-react-parser";
 import {
 	type DOMNode,
 	Element,
@@ -36,6 +42,22 @@ const replaceElements: Record<
 			{children}
 		</Heading>
 	),
+	code: ({ children, ...props }) => {
+		// Propsが空かどうか
+		if (Reflect.ownKeys(props).length === 0) {
+			return (
+				<Text as={"code"} bg={"gray.50"} p={1} borderRadius={"sm"} {...props}>
+					{children}
+				</Text>
+			);
+		}
+
+		return (
+			<code className="hljs" {...props}>
+				{parse(hljs.highlightAuto(children?.toString() ?? "").value)}
+			</code>
+		);
+	},
 	p: ({ children, ...props }) => <Text {...props}>{children}</Text>,
 	ul: ({ children, ...props }) => <DiscList {...props}>{children}</DiscList>,
 	ol: ({ children, ...props }) => (
@@ -43,12 +65,17 @@ const replaceElements: Record<
 	),
 	li: ({ children, ...props }) => <ListItem {...props}>{children}</ListItem>,
 	table: ({ children, ...props }) => (
-		<NativeTable border={1} {...props}>
-			{children}
-		</NativeTable>
+		<TableContainer>
+			<NativeTable {...props}>{children}</NativeTable>
+		</TableContainer>
 	),
+	tbody: ({ children, ...props }) => <Tbody {...props}>{children}</Tbody>,
 	tr: ({ children, ...props }) => <Tr {...props}>{children}</Tr>,
-	th: ({ children, ...props }) => <Th {...props}>{children}</Th>,
+	th: ({ children, ...props }) => (
+		<Th bg={"gray.50"} {...props}>
+			{children}
+		</Th>
+	),
 	td: ({ children, ...props }) => <Td {...props}>{children}</Td>,
 	b: ({ children, ...props }) => (
 		<Text as={"b"} {...props}>
@@ -64,6 +91,19 @@ const replaceElements: Record<
 		<Text as={"s"} {...props}>
 			{children}
 		</Text>
+	),
+	blockquote: ({ children, ...props }) => (
+		<blockquote {...props}>
+			<Box
+				bg={"gray.50"}
+				p={3}
+				borderLeft={4}
+				borderLeftColor={"black"}
+				borderLeftStyle={"solid"}
+			>
+				{children}
+			</Box>
+		</blockquote>
 	),
 };
 
