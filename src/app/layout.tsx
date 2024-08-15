@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Flex } from "@yamada-ui/react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -41,6 +42,7 @@ export default function RootLayout({
 						</Flex>
 						<Footer />
 					</Flex>
+					<SpeedInsights />
 				</Providers>
 			</body>
 		</html>
