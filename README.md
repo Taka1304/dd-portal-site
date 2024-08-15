@@ -6,8 +6,14 @@ Official website of Data Dreamers
 
 First, run the development server:
 
+### Required
+
+- nvm v1.1.12
+- node v20.16.0
+- corepack v0.29.3
+
 ```bash
-pnpm i
+pnpm install --frozen-lockfile
 
 pnpm dev
 ```
