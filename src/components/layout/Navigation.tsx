@@ -13,8 +13,8 @@ const List = [
 		href: "/for-new-dreamers",
 	},
 	{
-		title: "News",
-		href: "/news",
+		title: "Blog",
+		href: "/blog",
 	},
 	{
 		title: "Contact",
