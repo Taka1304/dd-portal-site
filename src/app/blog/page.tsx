@@ -5,6 +5,7 @@ import {
 	CardHeader,
 	HStack,
 	Heading,
+	Loading,
 	SimpleGrid,
 	Tag,
 	Text,
@@ -23,10 +24,10 @@ import type { Blog } from "~/types/blog";
 export const revalidate = 300;
 
 const BlogListPage = async () => {
-	const _data = await client.get<Blog>({ endpoint: "blogs" });
+	const data = await client.get<Blog>({ endpoint: "blogs" });
 
-	if (!_data) {
-		return <></>;
+	if (!data) {
+		return <Loading variant="circles" />;
 	}
 
 	return (
@@ -43,7 +44,7 @@ const BlogListPage = async () => {
 					記事一覧
 				</Heading>
 				<SimpleGrid w="full" columns={{ base: 3, sm: 1 }} gap={4}>
-					{_data.contents.map((blog) => (
+					{data.contents.map((blog) => (
 						<Link href={`blog/${blog.id}`} key={blog.id}>
 							<Card>
 								<Box
@@ -55,8 +56,8 @@ const BlogListPage = async () => {
 									<Image
 										src={blog.eyecatch?.url ?? RandomDummyImage()}
 										alt={blog.title}
-										layout="fill"
-										objectFit="contain"
+										fill
+										style={{ objectFit: "contain" }}
 									/>
 								</Box>
 								<CardHeader minH={"16"} alignItems={"start"}>
