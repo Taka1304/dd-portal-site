@@ -28,21 +28,36 @@ type ReplaceElementProps = {
 	[key: string]: any;
 };
 
+type CSSProperties = {
+	[key in keyof React.CSSProperties]?: string;
+};
+
+// スタイル文字列をオブジェクトに変換する関数
+const parseStyle = (styleString: string): CSSProperties => {
+	return styleString.split(";").reduce<CSSProperties>((acc, style) => {
+		const [property, value] = style.split(":");
+		if (property && value) {
+			acc[property.trim() as keyof CSSProperties] = value.trim();
+		}
+		return acc;
+	}, {} as CSSProperties);
+};
+
 const replaceElements: Record<
 	string,
 	React.ComponentType<ReplaceElementProps>
 > = {
-	h1: ({ children, ...props }) => (
+	h1: ({ children, style, ...props }) => (
 		<Heading as="h1" {...props}>
 			{children}
 		</Heading>
 	),
-	h2: ({ children, ...props }) => (
+	h2: ({ children, style, ...props }) => (
 		<Heading as="h2" {...props}>
 			{children}
 		</Heading>
 	),
-	code: ({ children, ...props }) => {
+	code: ({ children, style, ...props }) => {
 		// Propsが空かどうか
 		if (Reflect.ownKeys(props).length === 0) {
 			return (
@@ -58,42 +73,70 @@ const replaceElements: Record<
 			</code>
 		);
 	},
-	p: ({ children, ...props }) => <Text {...props}>{children}</Text>,
-	ul: ({ children, ...props }) => <DiscList {...props}>{children}</DiscList>,
-	ol: ({ children, ...props }) => (
-		<DecimalList {...props}>{children}</DecimalList>
+	p: ({ children, style, ...props }) => (
+		<Text style={style} {...props}>
+			{children}
+		</Text>
 	),
-	li: ({ children, ...props }) => <ListItem {...props}>{children}</ListItem>,
-	table: ({ children, ...props }) => (
+	ul: ({ children, style, ...props }) => (
+		<DiscList style={style} {...props}>
+			{children}
+		</DiscList>
+	),
+	ol: ({ children, style, ...props }) => (
+		<DecimalList style={style} {...props}>
+			{children}
+		</DecimalList>
+	),
+	li: ({ children, style, ...props }) => (
+		<ListItem style={style} {...props}>
+			{children}
+		</ListItem>
+	),
+	table: ({ children, style, ...props }) => (
 		<TableContainer>
-			<NativeTable {...props}>{children}</NativeTable>
+			<NativeTable style={style} {...props}>
+				{children}
+			</NativeTable>
 		</TableContainer>
 	),
-	tbody: ({ children, ...props }) => <Tbody {...props}>{children}</Tbody>,
-	tr: ({ children, ...props }) => <Tr {...props}>{children}</Tr>,
-	th: ({ children, ...props }) => (
-		<Th bg={"gray.50"} {...props}>
+	tbody: ({ children, style, ...props }) => (
+		<Tbody style={style} {...props}>
+			{children}
+		</Tbody>
+	),
+	tr: ({ children, style, ...props }) => (
+		<Tr style={style} {...props}>
+			{children}
+		</Tr>
+	),
+	th: ({ children, style, ...props }) => (
+		<Th bg={"gray.50"} style={style} {...props}>
 			{children}
 		</Th>
 	),
-	td: ({ children, ...props }) => <Td {...props}>{children}</Td>,
-	b: ({ children, ...props }) => (
-		<Text as={"b"} {...props}>
+	td: ({ children, style, ...props }) => (
+		<Td style={style} {...props}>
+			{children}
+		</Td>
+	),
+	b: ({ children, style, ...props }) => (
+		<Text as={"b"} style={style} {...props}>
 			{children}
 		</Text>
 	),
-	i: ({ children, ...props }) => (
-		<Text as={"i"} {...props}>
+	i: ({ children, style, ...props }) => (
+		<Text as={"i"} style={style} {...props}>
 			{children}
 		</Text>
 	),
-	s: ({ children, ...props }) => (
-		<Text as={"s"} {...props}>
+	s: ({ children, style, ...props }) => (
+		<Text as={"s"} style={style} {...props}>
 			{children}
 		</Text>
 	),
-	blockquote: ({ children, ...props }) => (
-		<blockquote {...props}>
+	blockquote: ({ children, style, ...props }) => (
+		<blockquote style={style} {...props}>
 			<Box
 				bg={"gray.50"}
 				p={3}
@@ -111,8 +154,13 @@ export const options: HTMLReactParserOptions = {
 	replace: (domNode) => {
 		if (domNode instanceof Element && domNode.tagName in replaceElements) {
 			const ComponentToRender = replaceElements[domNode.tagName];
+			const { style, ...otherAttribs } = domNode.attribs;
+
+			// style属性が存在する場合、オブジェクトに変換
+			const styleObj = style ? parseStyle(style) : undefined;
+			styleObj && console.log(styleObj);
 			return (
-				<ComponentToRender {...domNode.attributes}>
+				<ComponentToRender style={styleObj} {...otherAttribs}>
 					{domToReact(domNode.children as DOMNode[], options)}
 				</ComponentToRender>
 			);
