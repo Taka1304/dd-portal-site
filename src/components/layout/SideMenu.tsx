@@ -32,6 +32,10 @@ const List = [
 		href: "/news",
 	},
 	{
+		title: "Blog",
+		href: "/blog",
+	},
+	{
 		title: "Contact",
 		href: "/contact",
 	},
