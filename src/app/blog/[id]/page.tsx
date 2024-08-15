@@ -18,18 +18,28 @@ interface Props {
 	params: {
 		id: string;
 	};
+	searchParams: { [key: string]: string | string[] | undefined };
 }
 
 export const revalidate = 300;
 
-const BlogContentPage = async ({ params }: Props) => {
+const BlogContentPage = async ({ params, searchParams }: Props) => {
 	const { id } = params;
-	const data = await client.get<Content>({ endpoint: "blogs", contentId: id });
+
+	let draftKey = searchParams.draftKey;
+	if (typeof draftKey === "object") {
+		draftKey = draftKey.join("");
+	}
+	const data = await client.get<Content>({
+		endpoint: "blogs",
+		contentId: id,
+		queries: { draftKey: draftKey },
+	});
 
 	return (
 		<VStack>
 			<Section>
-				<Box>
+				<VStack gap={1}>
 					<Heading>{data.title}</Heading>
 					<Box>
 						{data.categories.map((category) => (
@@ -42,7 +52,7 @@ const BlogContentPage = async ({ params }: Props) => {
 						<Text>投稿日: {dayjs(data.publishedAt).format("YYYY/MM/DD")}</Text>
 						<Text>更新日: {dayjs(data.updatedAt).format("YYYY/MM/DD")}</Text>
 					</HStack>
-				</Box>
+				</VStack>
 				<Divider />
 				<Article data={data} />
 			</Section>
