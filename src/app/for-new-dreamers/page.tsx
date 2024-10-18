@@ -7,11 +7,16 @@ import {
 	ListItem,
 	Text,
 } from "@yamada-ui/react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
 import HeroImage from "~/components/layout/HeroImage";
 import Section from "~/components/layout/Section";
 import { EVENTS } from "~/constants/events";
+
+export const metadata: Metadata = {
+	title: "新入生の方へ",
+};
 
 const imageData = {
 	src: "/images/students-working-on-project.jpg",
@@ -83,9 +88,9 @@ export default function Home() {
 				<Grid templateColumns="1fr 2fr 1fr" gap={4}>
 					{EVENTS.map((event) => (
 						<>
-							<Text>{event.date}</Text>
-							<Text>{event.title}</Text>
-							<Text>{event.location}</Text>
+							<Text key={event.date}>{event.date}</Text>
+							<Text key={event.title}>{event.title}</Text>
+							<Text key={event.location}>{event.location}</Text>
 						</>
 					))}
 				</Grid>
