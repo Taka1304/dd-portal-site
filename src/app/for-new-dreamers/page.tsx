@@ -1,9 +1,14 @@
 import { Flex, Grid, Heading, Text } from "@yamada-ui/react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
 import HeroImage from "~/components/layout/HeroImage";
 import Section from "~/components/layout/Section";
 import { FLOWS } from "~/constants/flows";
+
+export const metadata: Metadata = {
+	title: "新入生の方へ",
+};
 
 const imageData = {
 	src: "/images/students-working-on-project.jpg",

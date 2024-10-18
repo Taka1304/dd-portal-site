@@ -1,8 +1,13 @@
 import { IconMail } from "@tabler/icons-react";
 import { Flex, Heading, Text } from "@yamada-ui/react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import HeroImage from "~/components/layout/HeroImage";
 import Section from "~/components/layout/Section";
+
+export const metadata: Metadata = {
+	title: "お問い合わせ",
+};
 
 const heroImageData = {
 	src: "/images/taking-notes-and-working-on-laptop.jpg",
