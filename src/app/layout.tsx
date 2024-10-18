@@ -3,14 +3,17 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Footer from "~/components/layout/Footer";
 import Header from "~/components/layout/Header";
-import "./globals.css";
 import Providers from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "Data Dreamers",
-	description: "Data Dreamers ",
+	title: {
+		template: "%s | Data Dreamers",
+		default: "Data Dreamers",
+	},
+	description:
+		"金沢工業大学 夢考房データサイエンスプロジェクト Data Dreamers の公式ホームページです。",
 };
 
 export default function RootLayout({
