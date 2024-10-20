@@ -8,6 +8,7 @@ import {
 	VStack,
 } from "@yamada-ui/react";
 import dayjs from "dayjs";
+import type { Metadata } from "next";
 import React from "react";
 import { Article } from "~/components/features/Article";
 import Section from "~/components/layout/Section";
@@ -19,6 +20,30 @@ interface Props {
 		id: string;
 	};
 	searchParams: { [key: string]: string | string[] | undefined };
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+	const id = params.id;
+
+	const data = await client.get<Content>({
+		endpoint: "blogs",
+		contentId: id,
+	});
+
+	return {
+		title: data.title,
+		openGraph: {
+			images: data.eyecatch,
+		},
+		twitter: {
+			images: data.eyecatch,
+			card: "summary_large_image",
+			site: "Data Dreamers",
+			siteId: "projectdd2023",
+			// TODO: HTML文字列からタグ消せたらこれ入れたい
+			// description: data.content
+		},
+	};
 }
 
 export const revalidate = 300;

@@ -6,12 +6,14 @@ env:
 
 on:
   pull_request:
+  push:
+    branches: ['dev']
   # 手動設定
   workflow_dispatch:
     inputs:
       ref:
         description: branch|tag|SHA to checkout
-        default: 'main'
+        default: 'dev'
         required: true
 jobs:
   deploy:
