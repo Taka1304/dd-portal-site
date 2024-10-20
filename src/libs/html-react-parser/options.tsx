@@ -158,7 +158,6 @@ export const options: HTMLReactParserOptions = {
 
 			// style属性が存在する場合、オブジェクトに変換
 			const styleObj = style ? parseStyle(style) : undefined;
-			styleObj && console.log(styleObj);
 			return (
 				<ComponentToRender style={styleObj} {...otherAttribs}>
 					{domToReact(domNode.children as DOMNode[], options)}
