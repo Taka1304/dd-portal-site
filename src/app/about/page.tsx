@@ -1,4 +1,5 @@
 import { Box, Flex, Grid, Heading, Text } from "@yamada-ui/react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import HeroImage from "~/components/layout/HeroImage";
 import Section from "~/components/layout/Section";
@@ -7,6 +8,21 @@ const imageData = {
 	src: "/images/challenge-lab-02.avif",
 	alt: "Data Dreamers",
 	priority: true,
+};
+
+export const metadata: Metadata = {
+	title: "About",
+	openGraph: {
+		type: "website",
+		url: "https://data-dreamers.vercel.app/about",
+		title: "About | Data Dreamers",
+		siteName: "Data Dreamers Official Website",
+		images: [
+			{
+				url: "https://data-dreamers.vercel.app/images/challenge-lab-02.avif",
+			},
+		],
+	},
 };
 
 export default function Home() {
