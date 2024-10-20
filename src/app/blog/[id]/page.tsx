@@ -22,12 +22,19 @@ interface Props {
 	searchParams: { [key: string]: string | string[] | undefined };
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({
+	params,
+	searchParams,
+}: Props): Promise<Metadata> {
 	const id = params.id;
-
+	let draftKey = searchParams.draftKey;
+	if (typeof draftKey === "object") {
+		draftKey = draftKey.join("");
+	}
 	const data = await client.get<Content>({
 		endpoint: "blogs",
 		contentId: id,
+		queries: { draftKey: draftKey },
 	});
 
 	return {
