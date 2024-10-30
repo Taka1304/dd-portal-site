@@ -1,7 +1,7 @@
 "use client";
 
 import { Autocomplete, AutocompleteOption } from "@yamada-ui/react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { Category } from "~/types/blog";
 
 type CategorySelectorProps = {
@@ -25,7 +25,7 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
 			onChange={handleCategoryChange}
 		>
 			{categories.map((category) => (
-				<AutocompleteOption key={category.id} value={category.name}>
+				<AutocompleteOption key={category.id} value={category.id}>
 					{category.name}
 				</AutocompleteOption>
 			))}
