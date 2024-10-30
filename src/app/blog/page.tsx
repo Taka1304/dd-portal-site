@@ -66,9 +66,9 @@ const BlogListPage = async ({ searchParams }: BlogListPageProps) => {
 
 	return (
 		<VStack>
-			<HStack>
-				<Spacer />
-				<HStack as="form" method="GET">
+			<HStack margin="1rem">
+				<Spacer display={{ base: "block", md: "none" }} />
+				<HStack>
 					<Spacer />
 					<CategorySelector
 						categories={categoriesData.contents}
