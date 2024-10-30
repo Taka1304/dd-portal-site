@@ -19,6 +19,7 @@ import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { CategorySelector } from "~/components/features/CategorySelector";
 import Section from "~/components/layout/Section";
 import { RandomDummyImage } from "~/constants/dummyImages";
 import { client } from "~/libs/microcms/client";
@@ -37,15 +38,18 @@ const BlogListPage = async ({ searchParams }: BlogListPageProps) => {
 	const searchWord = searchParams.q || ""; // URLクエリから検索ワードを取得
 	const selectedCategory = searchParams.category || ""; // URLクエリからカテゴリを取得
 
+	// microCMS APIにクエリパラメータを直接送信
 	const data = await client.get<Blog>({
 		endpoint: "blogs",
 		queries: {
 			filters: [
 				searchWord ? `title[contains]${searchWord}` : undefined,
-				selectedCategory ? `category[contains]${selectedCategory}` : undefined,
+				selectedCategory
+					? `categories[contains]${selectedCategory}`
+					: undefined,
 			]
 				.filter(Boolean)
-				.join(""),
+				.join("[and]"),
 		},
 	});
 
@@ -63,19 +67,10 @@ const BlogListPage = async ({ searchParams }: BlogListPageProps) => {
 			<HStack>
 				<HStack>
 					<Spacer />
-					<Autocomplete
-						placeholder="カテゴリ選択"
-						defaultValue={selectedCategory}
-						// onChange={(value) => {
-						// カテゴリ選択の変更を反映するURL更新ロジック
-						// }}
-					>
-						{categoriesData.contents.map((category) => (
-							<AutocompleteOption key={category.id} value={category.name}>
-								{category.name}
-							</AutocompleteOption>
-						))}
-					</Autocomplete>
+					<CategorySelector
+						categories={categoriesData.contents}
+						selectedCategory={selectedCategory}
+					/>
 					<Input />
 				</HStack>
 			</HStack>
