@@ -2,6 +2,7 @@ import {
 	Autocomplete,
 	AutocompleteOption,
 	Box,
+	Button,
 	Card,
 	CardBody,
 	CardHeader,
@@ -20,6 +21,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { CategorySelector } from "~/components/features/CategorySelector";
+import { SearchInput } from "~/components/features/SearchInput";
 import Section from "~/components/layout/Section";
 import { RandomDummyImage } from "~/constants/dummyImages";
 import { client } from "~/libs/microcms/client";
@@ -49,7 +51,7 @@ const BlogListPage = async ({ searchParams }: BlogListPageProps) => {
 					: undefined,
 			]
 				.filter(Boolean)
-				.join("[and]"),
+				.join("[or]"),
 		},
 	});
 
@@ -65,13 +67,14 @@ const BlogListPage = async ({ searchParams }: BlogListPageProps) => {
 	return (
 		<VStack>
 			<HStack>
-				<HStack>
+				<Spacer />
+				<HStack as="form" method="GET">
 					<Spacer />
 					<CategorySelector
 						categories={categoriesData.contents}
 						selectedCategory={selectedCategory}
 					/>
-					<Input />
+					<SearchInput />
 				</HStack>
 			</HStack>
 			<Section>
