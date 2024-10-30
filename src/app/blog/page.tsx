@@ -68,7 +68,7 @@ const BlogListPage = async ({ searchParams }: BlogListPageProps) => {
 		<VStack>
 			<HStack margin="1rem">
 				<Spacer display={{ base: "block", md: "none" }} />
-				<HStack>
+				<HStack flexDirection={{ base: "row", md: "column" }}>
 					<Spacer />
 					<CategorySelector
 						categories={categoriesData.contents}
