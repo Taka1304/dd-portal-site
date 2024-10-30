@@ -1,4 +1,6 @@
 import {
+	Autocomplete,
+	AutocompleteOption,
 	Box,
 	Card,
 	CardBody,
@@ -20,23 +22,39 @@ import React, { useState } from "react";
 import Section from "~/components/layout/Section";
 import { RandomDummyImage } from "~/constants/dummyImages";
 import { client } from "~/libs/microcms/client";
-import type { Blog } from "~/types/blog";
+import type { Blog, Category } from "~/types/blog";
 
 export const revalidate = 300;
 
-type BloglistPageProps = {
-	searchWord?: string;
-};
+interface BlogListPageProps {
+	searchParams: {
+		q?: string;
+		category?: string;
+	};
+}
 
-const BlogListPage = async ({ searchWord = "" }: BloglistPageProps) => {
+const BlogListPage = async ({ searchParams }: BlogListPageProps) => {
+	const searchWord = searchParams.q || ""; // URLクエリから検索ワードを取得
+	const selectedCategory = searchParams.category || ""; // URLクエリからカテゴリを取得
+
 	const data = await client.get<Blog>({
 		endpoint: "blogs",
 		queries: {
-			filters: searchWord ? `title[contains]${searchWord}` : undefined,
+			filters: [
+				searchWord ? `title[contains]${searchWord}` : undefined,
+				selectedCategory ? `category[contains]${selectedCategory}` : undefined,
+			]
+				.filter(Boolean)
+				.join(""),
 		},
 	});
 
-	if (!data) {
+	// カテゴリのデータ取得
+	const categoriesData = await client.getList<Category>({
+		endpoint: "categories",
+	});
+
+	if (!data || !categoriesData) {
 		return <Loading variant="circles" />;
 	}
 
@@ -45,7 +63,20 @@ const BlogListPage = async ({ searchWord = "" }: BloglistPageProps) => {
 			<HStack>
 				<HStack>
 					<Spacer />
-					<Input></Input>
+					<Autocomplete
+						placeholder="カテゴリ選択"
+						defaultValue={selectedCategory}
+						// onChange={(value) => {
+						// カテゴリ選択の変更を反映するURL更新ロジック
+						// }}
+					>
+						{categoriesData.contents.map((category) => (
+							<AutocompleteOption key={category.id} value={category.name}>
+								{category.name}
+							</AutocompleteOption>
+						))}
+					</Autocomplete>
+					<Input />
 				</HStack>
 			</HStack>
 			<Section>
