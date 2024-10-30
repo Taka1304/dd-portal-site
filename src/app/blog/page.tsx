@@ -5,8 +5,10 @@ import {
 	CardHeader,
 	HStack,
 	Heading,
+	Input,
 	Loading,
 	SimpleGrid,
+	Spacer,
 	Tag,
 	Text,
 	VStack,
@@ -14,8 +16,7 @@ import {
 import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import HeroImage from "~/components/layout/HeroImage";
+import React, { useState } from "react";
 import Section from "~/components/layout/Section";
 import { RandomDummyImage } from "~/constants/dummyImages";
 import { client } from "~/libs/microcms/client";
@@ -23,8 +24,17 @@ import type { Blog } from "~/types/blog";
 
 export const revalidate = 300;
 
-const BlogListPage = async () => {
-	const data = await client.get<Blog>({ endpoint: "blogs" });
+type BloglistPageProps = {
+	searchWord?: string;
+};
+
+const BlogListPage = async ({ searchWord = "" }: BloglistPageProps) => {
+	const data = await client.get<Blog>({
+		endpoint: "blogs",
+		queries: {
+			filters: searchWord ? `title[contains]${searchWord}` : undefined,
+		},
+	});
 
 	if (!data) {
 		return <Loading variant="circles" />;
@@ -32,13 +42,12 @@ const BlogListPage = async () => {
 
 	return (
 		<VStack>
-			<HeroImage
-				src="/images/dark-wooden-table-with-notebooks-a-leaf-and-a-yellow-pen.jpg"
-				alt="blog"
-				priority
-			>
-				Blog
-			</HeroImage>
+			<HStack>
+				<HStack>
+					<Spacer />
+					<Input></Input>
+				</HStack>
+			</HStack>
 			<Section>
 				<Heading as="h1" size="2xl">
 					記事一覧
