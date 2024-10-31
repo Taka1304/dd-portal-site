@@ -1,14 +1,10 @@
 import {
-	Autocomplete,
-	AutocompleteOption,
 	Box,
-	Button,
 	Card,
 	CardBody,
 	CardHeader,
 	HStack,
 	Heading,
-	Input,
 	Loading,
 	SimpleGrid,
 	Spacer,
@@ -19,7 +15,6 @@ import {
 import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
 import { CategorySelector } from "~/components/features/CategorySelector";
 import { SearchInput } from "~/components/features/SearchInput";
 import Section from "~/components/layout/Section";
