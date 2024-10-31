@@ -11,6 +11,7 @@ export const SearchInput = () => {
 	const initialSearchWord = searchParams.get("q") || "";
 	const [searchWord, setSearchWord] = useState(initialSearchWord);
 
+	// Enterキーが押されたときの処理
 	const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
 		if (e.key === "Enter") {
 			e.preventDefault(); // デフォルトのEnterキーの動作を無効化
@@ -20,6 +21,13 @@ export const SearchInput = () => {
 		}
 	};
 
+	// フォーカスが外れたときにクエリパラメータを更新
+	const handleBlur = () => {
+		const params = new URLSearchParams(Array.from(searchParams.entries()));
+		params.set("q", searchWord);
+		router.push(`?${params}`);
+	};
+
 	return (
 		<Input
 			name="q"
@@ -27,6 +35,7 @@ export const SearchInput = () => {
 			placeholder="検索ワードを入力"
 			onChange={(e) => setSearchWord(e.target.value)}
 			onKeyDown={handleKeyDown}
+			onBlur={handleBlur}
 		/>
 	);
 };
