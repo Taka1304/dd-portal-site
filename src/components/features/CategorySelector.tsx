@@ -17,7 +17,6 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
 		const currentParams = new URLSearchParams(window.location.search); // 現在のURLクエリパラメータを取得
 		currentParams.set("category", value); // categoryパラメータを設定または更新
 		router.push(`?${currentParams.toString()}`); // 更新されたクエリパラメータを使ってURLをプッシュ
-		// router.push(`?category=${value}`);
 	};
 
 	return (
