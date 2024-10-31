@@ -20,6 +20,7 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
 	return (
 		<Autocomplete
 			placeholder="カテゴリ選択"
+			emptyMessage="存在しないカテゴリです"
 			defaultValue={selectedCategory}
 			onChange={handleCategoryChange}
 		>
