@@ -11,9 +11,10 @@ export const SearchInput = () => {
 	const initialSearchWord = searchParams.get("q") || "";
 	const [searchWord, setSearchWord] = useState(initialSearchWord);
 
-	// Enterキーが押されたときの処理
+	// キーが押されたときの処理
 	const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
 		if (e.key === "Enter") {
+			// Enterキーが押されたときの処理
 			e.preventDefault(); // デフォルトのEnterキーの動作を無効化
 			const params = new URLSearchParams(Array.from(searchParams.entries()));
 			params.set("q", searchWord);
@@ -21,7 +22,7 @@ export const SearchInput = () => {
 		}
 	};
 
-	// フォーカスが外れたときにクエリパラメータを更新
+	// フォーカスが外れたときの処理
 	const handleBlur = () => {
 		const params = new URLSearchParams(Array.from(searchParams.entries()));
 		params.set("q", searchWord);
