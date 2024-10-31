@@ -41,12 +41,13 @@ const BlogListPage = async ({ searchParams }: BlogListPageProps) => {
 		queries: {
 			filters: [
 				searchWord ? `title[contains]${searchWord}` : undefined,
+				// selectedCategory ? `categories[equals]${selectedCategory}` : undefined,
 				selectedCategory
 					? `categories[contains]${selectedCategory}`
 					: undefined,
 			]
 				.filter(Boolean)
-				.join("[or]"),
+				.join("[and]"),
 		},
 	});
 
