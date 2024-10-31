@@ -13,10 +13,10 @@ export const SearchInput = () => {
 
 	const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
 		if (e.key === "Enter") {
-			e.preventDefault();
+			e.preventDefault(); // デフォルトのEnterキーの動作を無効化
 			const params = new URLSearchParams(Array.from(searchParams.entries()));
 			params.set("q", searchWord);
-			router.push(`?${params.toString()}`);
+			router.push(`?${params}`);
 		}
 	};
 
