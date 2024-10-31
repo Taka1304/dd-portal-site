@@ -2,7 +2,6 @@
 
 import { Autocomplete, AutocompleteOption } from "@yamada-ui/react";
 import { useRouter } from "next/navigation";
-import { Category } from "~/types/blog";
 
 type CategorySelectorProps = {
 	categories: { id: string; name: string }[];
