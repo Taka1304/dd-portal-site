@@ -7,6 +7,7 @@ import {
 	Heading,
 	Loading,
 	SimpleGrid,
+	Spacer,
 	Tag,
 	Text,
 	VStack,
@@ -14,31 +15,64 @@ import {
 import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import HeroImage from "~/components/layout/HeroImage";
+import { CategorySelector } from "~/components/features/CategorySelector";
+import { SearchInput } from "~/components/features/SearchInput";
 import Section from "~/components/layout/Section";
 import { RandomDummyImage } from "~/constants/dummyImages";
 import { client } from "~/libs/microcms/client";
-import type { Blog } from "~/types/blog";
+import type { Blog, Category } from "~/types/blog";
 
 export const revalidate = 300;
 
-const BlogListPage = async () => {
-	const data = await client.get<Blog>({ endpoint: "blogs" });
+interface BlogListPageProps {
+	searchParams: {
+		q?: string;
+		category?: string;
+	};
+}
 
-	if (!data) {
+const BlogListPage = async ({ searchParams }: BlogListPageProps) => {
+	const searchWord = searchParams.q || ""; // URLクエリから検索ワードを取得
+	const selectedCategory = searchParams.category || ""; // URLクエリからカテゴリを取得
+
+	// microCMS APIにクエリパラメータを直接送信
+	const data = await client.get<Blog>({
+		endpoint: "blogs",
+		queries: {
+			filters: [
+				searchWord ? `title[contains]${searchWord}` : undefined,
+				// selectedCategory ? `categories[equals]${selectedCategory}` : undefined,
+				selectedCategory
+					? `categories[contains]${selectedCategory}`
+					: undefined,
+			]
+				.filter(Boolean)
+				.join("[and]"),
+		},
+	});
+
+	// カテゴリのデータ取得
+	const categoriesData = await client.getList<Category>({
+		endpoint: "categories",
+	});
+
+	if (!data || !categoriesData) {
 		return <Loading variant="circles" />;
 	}
 
 	return (
 		<VStack>
-			<HeroImage
-				src="/images/dark-wooden-table-with-notebooks-a-leaf-and-a-yellow-pen.jpg"
-				alt="blog"
-				priority
-			>
-				Blog
-			</HeroImage>
+			<HStack margin="1rem">
+				<Spacer display={{ base: "block", md: "none" }} />
+				<HStack flexDirection={{ base: "row", md: "column" }}>
+					<Spacer />
+					<CategorySelector
+						categories={categoriesData.contents}
+						selectedCategory={selectedCategory}
+					/>
+					<SearchInput />
+				</HStack>
+			</HStack>
 			<Section>
 				<Heading as="h1" size="2xl">
 					記事一覧
