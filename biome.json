@@ -9,7 +9,8 @@
 			"recommended": true,
 			"correctness": {
 				"useHookAtTopLevel": "error",
-				"noUnusedVariables": "error"
+				"noUnusedVariables": "error",
+				"noUnusedImports": "error"
 			},
 			"suspicious": {
 				"noConsoleLog": "warn"
