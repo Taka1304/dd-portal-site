@@ -13,6 +13,7 @@ import {
 	Tr,
 } from "@yamada-ui/react";
 import hljs from "highlight.js";
+import Image from "next/image";
 import "highlight.js/styles/atom-one-dark.css";
 import parse from "html-react-parser";
 import {
@@ -148,6 +149,16 @@ const replaceElements: Record<
 			</Box>
 		</blockquote>
 	),
+	img: ({ children, src, alt, ...props }) => {
+		return (
+			<Image
+				src={src}
+				alt={alt}
+				layout="intrinsic" // アスペクト比を自動計算
+				{...props}
+			/>
+		);
+	},
 };
 
 export const options: HTMLReactParserOptions = {
