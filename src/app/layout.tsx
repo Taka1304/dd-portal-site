@@ -14,6 +14,19 @@ export const metadata: Metadata = {
 	},
 	description:
 		"金沢工業大学 夢考房データサイエンスプロジェクト Data Dreamers の公式ホームページです。",
+	openGraph: {
+		type: "website",
+		url: "https://data-dreamers.vercel.app",
+		title: "Data Dreamers",
+		description:
+			"金沢工業大学 夢考房データサイエンスプロジェクト Data Dreamers の公式ホームページです。",
+		siteName: "Data Dreamers Official Website",
+		images: [
+			{
+				url: "https://data-dreamers.vercel.app/images/challenge-lab-01.png",
+			},
+		],
+	},
 };
 
 export default function RootLayout({

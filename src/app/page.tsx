@@ -1,15 +1,34 @@
 import { IconChevronRight } from "@tabler/icons-react";
-import { Divider, Flex, Heading, Text } from "@yamada-ui/react";
+import { Flex, Heading, Separator, Text } from "@yamada-ui/react";
+import type { Metadata } from "next";
+import type { ImageProps } from "next/image";
 import Link from "next/link";
 import { GhostButton } from "~/components/atoms/Button";
 import DocsWell from "~/components/features/DocsWell";
 import HeroImage from "~/components/layout/HeroImage";
 import Section from "~/components/layout/Section";
+import HeroImageSrc from "../../public/images/challenge-lab-01.png";
 
-const imageData = {
-	src: "/images/challenge-lab-01.avif",
+export const metadata: Metadata = {
+	title: "Data Dreamers",
+	openGraph: {
+		type: "website",
+		url: "https://data-dreamers.vercel.app/about",
+		title: "About | Data Dreamers",
+		siteName: "Data Dreamers Official Website",
+		images: [
+			{
+				url: "https://data-dreamers.vercel.app/images/challenge-lab-01.png",
+			},
+		],
+	},
+};
+
+const imageData: ImageProps = {
+	src: HeroImageSrc,
 	alt: "Data Dreamers",
 	priority: true,
+	placeholder: "blur",
 };
 
 export default function Home() {
@@ -31,7 +50,7 @@ export default function Home() {
 							Data Science &amp; Analytics Community
 						</Text>
 					</div>
-					<Divider py={2} />
+					<Separator py={2} />
 					<Text textAlign={"center"}>
 						Data Dreamersは、データサイエンティストを育成するプロジェクトです。
 					</Text>

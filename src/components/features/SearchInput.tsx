@@ -1,4 +1,3 @@
-// components/features/SearchInput.tsx
 "use client";
 
 import { Input } from "@yamada-ui/react";
@@ -34,7 +33,9 @@ export const SearchInput = () => {
 			name="q"
 			value={searchWord}
 			placeholder="検索ワードを入力"
-			onChange={(e) => setSearchWord(e.target.value)}
+			onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+				setSearchWord(e.target.value)
+			}
 			onKeyDown={handleKeyDown}
 			onBlur={handleBlur}
 		/>
