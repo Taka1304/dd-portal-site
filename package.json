@@ -12,8 +12,8 @@
 	"dependencies": {
 		"@tabler/icons-react": "^3.1.0",
 		"@vercel/analytics": "^1.2.2",
-		"@yamada-ui/carousel": "^1.0.15",
-		"@yamada-ui/react": "^1.2.5",
+		"@yamada-ui/carousel": "^1.0.37",
+		"@yamada-ui/react": "^1.7.4",
 		"dayjs": "^1.11.10",
 		"highlight.js": "^11.10.0",
 		"html-react-parser": "^5.1.12",
@@ -29,5 +29,8 @@
 		"@types/react-dom": "^18.0.0",
 		"lefthook": "^1.6.1",
 		"typescript": "^5.0.2"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": ["lefthook"]
 	}
 }
