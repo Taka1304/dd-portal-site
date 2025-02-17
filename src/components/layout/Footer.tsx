@@ -2,14 +2,13 @@ import { IconBrandX, IconBrandYoutube, IconMail } from "@tabler/icons-react";
 import {
 	Button,
 	Container,
-	Divider,
 	Flex,
 	Heading,
+	Separator,
 	Text,
 } from "@yamada-ui/react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const data = [
 	{
@@ -59,12 +58,12 @@ const sns = [
 	{
 		Icon: <IconBrandYoutube />,
 		href: "https://www.youtube.com/@DataDreamers-rs6fy",
-		label: "Youtube",
+		label: "YouTube",
 	},
 	{
 		Icon: <IconMail />,
 		href: "mailto:yumekobo.ddp@gmail.com",
-		label: "EMail",
+		label: "Email",
 	},
 ];
 
@@ -125,7 +124,7 @@ const Footer = () => {
 						{groups}
 					</Flex>
 				</Flex>
-				<Divider py={2} />
+				<Separator py={2} />
 				<Flex
 					justify={"space-between"}
 					align={{ base: "start", md: "center" }}
