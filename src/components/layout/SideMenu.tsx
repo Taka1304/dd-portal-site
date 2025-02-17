@@ -2,17 +2,16 @@
 
 import { IconMenu2 } from "@tabler/icons-react";
 import {
-	Button,
 	Drawer,
 	DrawerBody,
 	DrawerHeader,
 	Flex,
+	IconButton,
 	Motion,
 	Text,
 	useDisclosure,
 } from "@yamada-ui/react";
 import Link from "next/link";
-import React from "react";
 
 const List = [
 	{
@@ -42,25 +41,23 @@ const List = [
 ];
 
 const SideMenu = () => {
-	const { isOpen, onOpen, onClose } = useDisclosure();
+	const { open, onOpen, onClose } = useDisclosure();
 	const underlineAnimation = {
 		initial: { width: "0%" },
 		animate: { width: "100%" },
 	};
 	return (
 		<>
-			<Button
+			<IconButton
+				icon={<IconMenu2 size={24} />}
+				variant={"outline"}
 				onClick={onOpen}
-				bg={"transparent"}
-				border={"revert"}
 				color={"white"}
-				_hover={{ bg: "rgba(256, 256, 256, 0.1)" }}
-			>
-				<IconMenu2 size={24} />
-			</Button>
+				_hover={{ bg: "blackAlpha.500" }}
+			/>
 
 			<Drawer
-				isOpen={isOpen}
+				open={open}
 				onClose={onClose}
 				size={"sm"}
 				bgGradient={"blue"}
