@@ -5,7 +5,7 @@ import HeroImage from "~/components/layout/HeroImage";
 import Section from "~/components/layout/Section";
 
 const imageData = {
-	src: "/images/challenge-lab-02.avif",
+	src: "/images/challenge-lab-02.png",
 	alt: "Data Dreamers",
 	priority: true,
 };
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 		siteName: "Data Dreamers Official Website",
 		images: [
 			{
-				url: "https://data-dreamers.vercel.app/images/challenge-lab-02.avif",
+				url: "https://data-dreamers.vercel.app/images/challenge-lab-02.png",
 			},
 		],
 	},
