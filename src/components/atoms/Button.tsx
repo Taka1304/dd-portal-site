@@ -1,5 +1,5 @@
 import { Button, type ButtonProps, Motion } from "@yamada-ui/react";
-import React, { type FC } from "react";
+import type { FC } from "react";
 
 export const OutlineButton: FC<ButtonProps> = ({ children, ...rest }) => {
 	const topKey = {

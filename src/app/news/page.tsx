@@ -1,4 +1,4 @@
-import { Divider, Flex, Grid, Heading, Text } from "@yamada-ui/react";
+import { Flex, Grid, Heading, Separator, Text } from "@yamada-ui/react";
 import dayjs from "dayjs";
 import HeroImage from "~/components/layout/HeroImage";
 import Section from "~/components/layout/Section";
@@ -58,7 +58,7 @@ export default function Home() {
 										{content.title}
 									</Text>
 								</Grid>
-								{index !== NEWS.length - 1 && <Divider my={2} />}
+								{index !== NEWS.length - 1 && <Separator my={2} />}
 							</>
 						);
 					})}
