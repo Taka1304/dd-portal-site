@@ -83,6 +83,10 @@ export default function Home() {
 				<Heading as="h2" size={"lg"} id="schedule">
 					スケジュール
 				</Heading>
+				<Text>
+					※2024年度のスケジュールを掲載しています。
+					2025年度のスケジュールは随時更新します。
+				</Text>
 
 				{/* <Heading as="h3" size={"md"}>
 					課外活動紹介イベント
