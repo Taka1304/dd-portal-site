@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import HeroImage from "~/components/layout/HeroImage";
 import Section from "~/components/layout/Section";
-import { FLOWS } from "~/constants/flows";
+import { EVENTS } from "~/constants/events";
 
 const imageData = {
 	src: "/images/students-working-on-project.jpg",
@@ -21,21 +21,6 @@ const tools = [
 	"仮想環境",
 	"Docker",
 ];
-
-// const events = [
-// 	"4/3 10:00~17:00",
-// 	"「プロジェクト合同説明会」",
-// 	"23号館1階",
-// 	"4/8 17:10~18:50",
-// 	"「Data Dreamers Project説明会」",
-// 	"23号館2階214",
-// 	"4/10,11,12 17:15~19:00",
-// 	"「夢考房合同説明会」",
-// 	"23号館2階211",
-// 	"4/11 17:00~19:00",
-// 	"「情報工学系プロジェクト説明会」",
-// 	"23号館1階 パフォーミングスタジオ",
-// ];
 
 export default function Home() {
 	return (
@@ -83,36 +68,27 @@ export default function Home() {
 				<Heading as="h2" size={"lg"} id="schedule">
 					スケジュール
 				</Heading>
-				<Text>
-					※2024年度のスケジュールを掲載しています。
-					2025年度のスケジュールは随時更新します。
-				</Text>
 
-				{/* <Heading as="h3" size={"md"}>
+				<Heading as="h3" size={"md"}>
 					課外活動紹介イベント
 				</Heading>
 				<Grid templateColumns="1fr 2fr 1fr" gap={4}>
-					{events.map((event) => (
-						<Text key={event}>{event}</Text>
+					{EVENTS.map((event) => (
+						<>
+							<Text>{event.date}</Text>
+							<Text>{event.title}</Text>
+							<Text>{event.location}</Text>
+						</>
 					))}
-				</Grid> */}
+				</Grid>
 
 				<Heading as="h3" size={"md"}>
 					活動の流れ
 				</Heading>
-				<Grid templateColumns="2fr 2fr 1fr" gap={4}>
-					{FLOWS.map((flow) => (
-						<Text key={flow}>{flow}</Text>
-					))}
-				</Grid>
-				{/* <Text color="gray.700">
-					※活動場所については随時お知らせいたします。
-				</Text> */}
-				<Text color={"red.500"} fontWeight={"bold"}>
-					仮加入申請を行ったうえで、全3回の研修すべてに出席した方のみが本加入となります。
-					<br />
-					本加入後はグループの希望アンケートを取り、グループ配属となります。
-				</Text>
+				<Text>1. 参加仮登録</Text>
+				<Text>2. オリエンテーション</Text>
+				<Text>3. 新入生教育への参加</Text>
+				<Text>4. 各グループへの所属</Text>
 				<Text color="gray.700">
 					授業などが重なっている場合、個別に対応させていただきます。
 					<br />
