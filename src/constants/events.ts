@@ -13,7 +13,7 @@ export const EVENTS = [
 	{
 		date: "2025年4月11日 17:10~18:00",
 		title: "「Data Dreamers プロジェクト説明会」",
-		location: "23.211",
+		location: "23.218",
 	},
 	{
 		date: "2025年4月14日 17:10~19:00",
