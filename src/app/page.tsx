@@ -1,5 +1,5 @@
 import { IconChevronRight } from "@tabler/icons-react";
-import { Flex, Heading, Separator, Text } from "@yamada-ui/react";
+import { Divider, Flex, Heading, Text } from "@yamada-ui/react";
 import Link from "next/link";
 import { GhostButton } from "~/components/atoms/Button";
 import DocsWell from "~/components/features/DocsWell";
@@ -31,7 +31,7 @@ export default function Home() {
 							Data Science &amp; Analytics Community
 						</Text>
 					</div>
-					<Separator py={2} />
+					<Divider py={2} />
 					<Text textAlign={"center"}>
 						Data Dreamersは、データサイエンティストを育成するプロジェクトです。
 					</Text>
