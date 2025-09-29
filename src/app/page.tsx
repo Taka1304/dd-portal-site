@@ -7,7 +7,7 @@ import HeroImage from "~/components/layout/HeroImage";
 import Section from "~/components/layout/Section";
 
 const imageData = {
-	src: "/images/challenge-lab-01.avif",
+	src: "/images/challenge-lab-01.webp",
 	alt: "Data Dreamers",
 	priority: true,
 };
